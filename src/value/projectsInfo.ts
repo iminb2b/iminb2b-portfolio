@@ -20,6 +20,18 @@ export type ProjectInfo = {
 
 export const projectInfos: ProjectInfo[] = [
   {
+    img: netflix.src,
+    title: "Netflix",
+    objectives: "Clone Netflix UI",
+    description:
+      "A Netflix clone project to mimic the UI/UX of Netflix for learning purposes.",
+    tool: ["Typescript", "NextJs", "Emotion"],
+    link: "https://netflix.projects.iminb2b.com/",
+    slug: "netflix",
+    sourceCode: "https://github.com/iminb2b/netflix-clone",
+    features: ["Video streaming", "Responsive design"],
+  },
+  {
     slug: "advocacyassembly",
     img: aa.src,
     title: "Advocacy Assembly",
@@ -80,18 +92,7 @@ export const projectInfos: ProjectInfo[] = [
     sourceCode: "https://github.com/iminb2b/dolla",
     features: ["Responsive design"],
   },
-  {
-    img: netflix.src,
-    title: "Netflix",
-    objectives: "Clone Netflix UI",
-    description:
-      "A Netflix clone project to mimic the UI/UX of Netflix for learning purposes.",
-    tool: ["React", "Redux", "Firebase", "fuse.js", "Styled Components"],
-    link: "http://netflix-nhungnguyen.surge.sh/",
-    slug: "netflix",
-    sourceCode: "https://github.com/iminb2b/netflix",
-    features: ["User authentication", "Video streaming", "Responsive design"],
-  },
+
   {
     img: amazon.src,
     title: "Amazon",
