@@ -26,7 +26,7 @@ export const projectInfos: ProjectInfo[] = [
     description:
       "A Netflix clone project to mimic the UI/UX of Netflix for learning purposes.",
     tool: ["Typescript", "NextJs", "Emotion"],
-    link: "https://netflix-clone-git-main-iminb2bs-projects.vercel.app/",
+    link: "https://https://nextflix.projects.iminb2b.com/",
     slug: "netflix",
     sourceCode: "https://github.com/iminb2b/netflix-clone",
     features: ["Video streaming", "Responsive design"],
