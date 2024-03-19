@@ -20,6 +20,17 @@ export type ProjectInfo = {
 
 export const projectInfos: ProjectInfo[] = [
   {
+    img: "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/Banner.jpg",
+    title: "Earth Store",
+    objectives: "Shopping website",
+    description: "Earth Store is a website that sell arts",
+    tool: ["Django", "GraphQl", "Typescript", "NextJs", "Emotion"],
+    link: "https://earth.projects.iminb2b.com/",
+    slug: "earth",
+    sourceCode: "https://github.com/iminb2b/earth-store",
+    features: ["Filtering", "Responsive design"],
+  },
+  {
     img: netflix.src,
     title: "Netflix",
     objectives: "Clone Netflix UI",
