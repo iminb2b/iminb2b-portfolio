@@ -37,7 +37,7 @@ const image = css`
 `;
 
 const title = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${darkmode ? colors.white : colors.purple};
+  color: ${darkmode ? colors.white : colors.black};
 `;
 
 const HomePageMySkillsListItem: FC<{ skill: SkillInfo }> = ({

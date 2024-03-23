@@ -14,7 +14,7 @@ const iconTextColumn = css`
 
 const icon = css`
   font-size: 2rem;
-  color: ${colors.purple};
+  color: ${colors.black};
 `;
 
 const NavMenuMobileButton: FC<{

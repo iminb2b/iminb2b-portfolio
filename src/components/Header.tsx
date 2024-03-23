@@ -50,7 +50,7 @@ const darkModeContainer = ({ scrollNav }: { scrollNav: boolean }) => css`
   ${contentWrapper}
   padding: ${scrollNav ? "0.5rem 2rem" : "0.5rem 1rem"};
 
-  background-color: ${scrollNav ? "rgba(20,0,157,0.8)" : "transparent"};
+  background-color: ${scrollNav ? "rgba(0,0,0, 0.5)" : "transparent"};
   box-shadow: ${scrollNav ? "rgba(0, 0, 0, 0.1) 0px 4px 12px;" : "none"};
 `;
 

@@ -24,7 +24,7 @@ export const projectInfos: ProjectInfo[] = [
     title: "Earth Store",
     objectives: "Shopping website",
     description: "Earth Store is a website that sell arts",
-    tool: ["Django", "GraphQl", "Typescript", "NextJs", "Emotion"],
+    tool: ["Django", "GraphQl", "Typescript"],
     link: "https://earth.projects.iminb2b.com/",
     slug: "earth",
     sourceCode: "https://github.com/iminb2b/earth-store",
@@ -86,7 +86,7 @@ export const projectInfos: ProjectInfo[] = [
     objectives: "Share travel guides and tips",
     description:
       "A travel website to share insightful travel guides, tips, and personal experiences from around the world.",
-    tool: ["GraphQl", "Gatsby", "Typescript", "NextJs", "Emotion"],
+    tool: ["GraphQl", "Gatsby", "Typescript"],
     link: "https://explorix.projects.iminb2b.com",
     sourceCode: "https://github.com/iminb2b/explorix",
     features: ["Dynamic content", "SEO optimized", "Responsive design"],
@@ -98,7 +98,7 @@ export const projectInfos: ProjectInfo[] = [
     objectives: "Provide financial information and analysis",
     description:
       "A financial website offering real-time stock data, financial news, and analysis tools.",
-    tool: ["GraphQl", "Gatsby", "Typescript", "NextJs", "Emotion"],
+    tool: ["GraphQl", "Gatsby", "Typescript"],
     link: "https://dolla.projects.iminb2b.com/",
     sourceCode: "https://github.com/iminb2b/dolla",
     features: ["Responsive design"],
@@ -110,7 +110,7 @@ export const projectInfos: ProjectInfo[] = [
     objectives: "Clone Amazon UI",
     description:
       "An Amazon clone project to replicate the shopping experience of Amazon for educational purposes.",
-    tool: ["Reactjs", "Redux", "Firebase", "Styled-components"],
+    tool: ["Reactjs", "Redux", "Firebase"],
     link: "https://amazon-nhungnguyen.surge.sh/",
     slug: "amazon",
     sourceCode: "https://github.com/iminb2b/amazon",

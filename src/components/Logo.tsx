@@ -9,10 +9,6 @@ const logo = css`
   font-size: 2rem;
   font-weight: 700;
   transition: all 0.3s ease;
-
-  &:hover {
-    color: ${colors.purple};
-  }
 `;
 
 const Logo: FC = () => {

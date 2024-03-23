@@ -36,8 +36,8 @@ const contentWrapper = css`
 const projectsContainer = css`
   border-radius: 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 4rem;
+  grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+  grid-gap: 3rem;
   margin-bottom: 3rem;
   width: 100%;
   padding: 3rem 0;

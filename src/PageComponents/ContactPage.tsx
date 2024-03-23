@@ -74,8 +74,8 @@ const emailContainer = css`
 const emailBox = ({ darkmode }: { darkmode: boolean }) => css`
   padding: 1rem;
   background-color: ${darkmode
-    ? "rgba(13,244,193,0.37)"
-    : "rgba(142, 77, 247, 0.17)"};
+    ? "rgba(255, 255, 255, 0.5)"
+    : "rgba(0, 0, 0, 0.17)"};
   border-radius: 0.5rem;
 `;
 const emailInfo = css`
@@ -88,7 +88,7 @@ const emailInfo = css`
 
 const icon = ({ darkmode }: { darkmode: boolean }) => css`
   font-size: 2.5rem;
-  color: ${darkmode ? colors.green : colors.purple};
+  color: ${darkmode ? colors.white : colors.black};
   transform: all 0.5s ease-in;
 
   &:hover {
@@ -96,13 +96,13 @@ const icon = ({ darkmode }: { darkmode: boolean }) => css`
   }
 `;
 const emailTitle = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${darkmode ? colors.green : colors.textPrimary};
+  color: ${darkmode ? colors.white : colors.textPrimary};
 `;
 const mediaContainer = ({ darkmode }: { darkmode: boolean }) => css`
   padding: 1rem;
   background-color: ${darkmode
-    ? "rgba(13,244,193,0.37)"
-    : "rgba(142, 77, 247, 0.17)"};
+    ? "rgba(255,255,255,0.5)"
+    : "rgba(0, 0, 0, 0.17)"};
   border-radius: 0.5rem;
   font-size: 1.375rem;
   display: flex;
@@ -120,7 +120,7 @@ const line = ({ darkmode }: { darkmode: boolean }) => css`
   width: 5rem;
   height: 3px;
   border-radius: 0.25rem;
-  background-color: ${darkmode ? colors.green : colors.purple};
+  background-color: ${darkmode ? colors.white : colors.black};
 `;
 const list = css`
   display: flex;
@@ -171,7 +171,7 @@ const ContactPage: NextPage = () => {
               </div>
             </div>
           </div>
-          <img src={messageImg.src} css={message} />
+          <div css={message} />
         </div>
       </div>
     </PageContainer>

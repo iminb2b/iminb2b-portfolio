@@ -2,13 +2,13 @@ import colors from "@/value/colors";
 import { css } from "@emotion/react";
 
 export const contentContainer = css`
-  max-width: 1200px;
+  max-width: 1400px;
   padding: 1rem;
 `;
 
 export const sectionService = ({ darkmode }: { darkmode: boolean }) => css`
   font-size: clamp(1rem, 2vw, 1.375rem);
-  color: ${darkmode ? colors.green : colors.textPrimary};
+  color: ${darkmode ? colors.white : colors.textPrimary};
 `;
 
 export const sectionTitle = css`
@@ -27,8 +27,7 @@ export const sectionDescription = css`
 export const boxWrapper = ({ darkmode }: { darkmode: boolean }) => css`
   position: relative;
 
-  background-color: ${darkmode ? "rgba(20,0,157,0.3)" : colors.white};
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: ${darkmode ? "transparent" : colors.white};
   border-radius: 2rem;
   display: flex;
   flex-direction: column;

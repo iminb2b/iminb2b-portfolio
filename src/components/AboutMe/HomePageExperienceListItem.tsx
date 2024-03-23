@@ -19,7 +19,7 @@ const jobItem = ({ darkmode }: { darkmode: boolean }) => css`
     left: -7px;
     width: 14px;
     border-radius: 50%;
-    background-color: ${darkmode ? colors.green : colors.purple};
+    background-color: ${darkmode ? colors.white : colors.black};
     height: 14px;
   }
 
@@ -41,7 +41,7 @@ const jobTitle = ({ darkmode }: { darkmode: boolean }) => css`
   font-size: 1.125rem;
   line-height: 1.6;
 
-  color: ${darkmode ? colors.green : colors.purple};
+  color: ${darkmode ? colors.white : colors.black};
 `;
 const list = css`
   padding: 0.5rem 1.5rem;

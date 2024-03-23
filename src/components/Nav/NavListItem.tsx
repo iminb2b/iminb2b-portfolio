@@ -9,6 +9,7 @@ import { AppContext } from "@/context/AppContext";
 const link = ({ darkmode }: { darkmode: boolean }) => css`
   transition: all 0.3s ease;
   position: relative;
+  text-transform: uppercase;
 
   &:hover {
     &::after {
@@ -24,15 +25,16 @@ const link = ({ darkmode }: { darkmode: boolean }) => css`
 `;
 
 const activeLink = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${darkmode ? colors.green : colors.purple};
+  color: ${darkmode ? colors.white : colors.black};
   position: relative;
+  text-transform: uppercase;
 
   &::after {
     content: "";
     position: absolute;
     bottom: -4px;
     height: 2px;
-    background-color: ${darkmode ? colors.green : colors.purple};
+    background-color: ${darkmode ? colors.white : colors.black};
     width: 80%;
     left: 10%;
   }
@@ -45,13 +47,6 @@ const NavListItem: FC<{
   const {
     state: { darkmode },
   } = useContext(AppContext);
-
-  if (item.isButtonLink)
-    return (
-      <Link href={item.url} css={buttonStyles({ darkmode })}>
-        {item.name}
-      </Link>
-    );
 
   return (
     <Link

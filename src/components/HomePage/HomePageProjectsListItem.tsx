@@ -5,34 +5,53 @@ import Link from "next/link";
 import { AppContext } from "@/context/AppContext";
 import routeLinks from "@/routeLinks";
 import { ProjectInfo } from "@/value/projectsInfo";
+import buttonStyles from "@/styles/buttonStyles";
 
 const projectContainer = ({ darkmode }: { darkmode: boolean }) => css`
-  box-shadow: ${darkmode
-    ? "rgba(255, 255, 255, 0.24) 0px 5px 8px"
-    : "rgba(0, 0, 0, 0.24) 0px 3px 8px"};
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   background-color: ${darkmode ? "rgba(20,0,157,0.3)" : colors.white};
   padding: 0;
   width: 100%;
-  height: auto;
+  flex-direction: column;
+  gap: 2rem;
   background-color: transparent;
+  display: flex;
   transition: all 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.02);
-    box-shadow: 5px 5px 15px 5px ${colors.pink},
-      -9px 5px 15px 5px ${colors.yellow}, -7px -5px 15px 5px #8cff85,
-      12px -5px 15px 5px #80c7ff, 12px 10px 15px 7px #e488ff,
-      -10px 10px 15px 7px #ff616b, -10px -7px 27px 1px #8e5cff,
-      0px 0px 50px 12px rgba(0, 0, 0, 0);
-  }
 `;
 
 const image = css`
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   width: 100%;
   min-height: 100%;
+  max-height: 100%;
+  object-fit: cover;
   aspect-ratio: 3/2;
+`;
+const infoContainer = css`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+const toolList = css`
+  display: flex;
+  gap: 2rem;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+`;
+
+const toolItem = ({ darkmode }: { darkmode: boolean }) => css`
+  color: ${darkmode ? colors.white : colors.black};
+  padding: 0.5rem;
+`;
+
+const title = css`
+  font-size: 2rem;
+`;
+
+const linkContainer = css`
+  display: flex;
+  gap: 2rem;
 `;
 
 const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({
@@ -43,12 +62,41 @@ const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({
   } = useContext(AppContext);
 
   return (
-    <Link
-      css={projectContainer({ darkmode })}
-      href={routeLinks.project({ lang, slug: project.slug })}
-    >
-      <img css={image} src={project.img} />
-    </Link>
+    <div css={projectContainer({ darkmode })}>
+      <Link href={routeLinks.project({ lang, slug: project.slug })}>
+        <img css={image} src={project.img} />
+      </Link>
+      <div css={infoContainer}>
+        <h3 css={title}>{project.title}</h3>
+
+        <ul css={toolList}>
+          {project.tool.map((item, index) => (
+            <li key={index} css={toolItem({ darkmode })}>
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <div css={linkContainer}>
+          <Link
+            href={project.link}
+            css={buttonStyles({ darkmode })}
+            target="_blank"
+          >
+            Website
+          </Link>
+          {project.sourceCode && (
+            <Link
+              href={project.sourceCode}
+              target="_blank"
+              css={buttonStyles({ darkmode })}
+            >
+              Source Code
+            </Link>
+          )}
+        </div>
+      </div>
+    </div>
   );
 };
 

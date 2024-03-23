@@ -49,7 +49,7 @@ const service2Container = css`
   gap: 0;
   padding-top: 2rem;
 
-  background-color: ${colors.green};
+  background-color: ${colors.white};
 `;
 const service3Container = css`
   border-radius: 2rem;
@@ -131,7 +131,7 @@ const block3 = css`
 `;
 
 const block4 = css`
-  background-color: ${colors.purple};
+  background-color: ${colors.black};
   border-radius: 2rem;
   height: 100%;
   display: flex;

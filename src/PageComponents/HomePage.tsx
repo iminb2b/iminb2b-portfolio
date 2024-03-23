@@ -12,8 +12,8 @@ const HomePage: NextPage = () => {
     <PageContainer>
       <PageMeta title="Min - Home Page" description={"Nhung Nguyen"} />
       <HomePageHero />
-      <HomePageMyServices />
-      <HomePageMySkills />
+      {/* <HomePageMyServices /> */}
+      {/* <HomePageMySkills /> */}
       <HomePageProjects />
     </PageContainer>
   );

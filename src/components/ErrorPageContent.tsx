@@ -25,7 +25,7 @@ const contentWrapper = ({ darkmode }: { darkmode: boolean }) => css`
   display: flex;
   flex-direction: column;
   text-align: center;
-  color: ${darkmode ? colors.green : colors.purple};
+  color: ${darkmode ? colors.white : colors.black};
 `;
 
 const error404 = css`

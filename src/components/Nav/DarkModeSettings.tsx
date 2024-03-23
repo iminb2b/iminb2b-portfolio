@@ -6,11 +6,11 @@ import Brightness5Icon from "@mui/icons-material/Brightness5";
 import { AppContext } from "@/context/AppContext";
 
 const dark = css`
-  color: ${colors.purple};
+  color: ${colors.black};
 `;
 
 const lightMode = css`
-  color: ${colors.green};
+  color: ${colors.white};
 `;
 
 const DarkModeSettings: FC<{}> = () => {
