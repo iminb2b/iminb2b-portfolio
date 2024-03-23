@@ -12,9 +12,8 @@ import DarkModeSettings from "./DarkModeSettings";
 const container = ({ darkmode }: { darkmode: boolean }) => css`
   display: flex;
   top: 4.5rem;
-  left: 5%;
-  border-radius: 2rem;
-  background-color: ${darkmode ? colors.blue : colors.white};
+  left: 0;
+  background-color: ${darkmode ? colors.black : colors.white};
   position: fixed;
   z-index: 10;
   flex-direction: column;
@@ -25,7 +24,7 @@ const container = ({ darkmode }: { darkmode: boolean }) => css`
     ? "rgba(255, 255, 255, 0.1) 0px 4px 12px;"
     : "rgba(0, 0, 0, 0.1) 0px 4px 12px;"};
 
-  width: 90%;
+  width: 100%;
   color: ${darkmode ? colors.white : colors.textPrimary};
 
   @media screen and (min-width: 720px) {

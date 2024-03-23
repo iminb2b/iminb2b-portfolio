@@ -3,7 +3,6 @@ import { FC, useContext } from "react";
 import { css } from "@emotion/react";
 import { NavInfo } from "./NavList";
 import colors from "@/value/colors";
-import buttonStyles from "@/styles/buttonStyles";
 import { AppContext } from "@/context/AppContext";
 
 const link = ({ darkmode }: { darkmode: boolean }) => css`

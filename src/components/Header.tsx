@@ -17,14 +17,10 @@ const container = ({ scrollNav }: { scrollNav: boolean }) => css`
   z-index: 10;
   justify-content: center;
   transition: all 0.3s ease;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
 
-  width: ${scrollNav ? "70%" : "100%"};
+  width: ${scrollNav ? "80%" : "100%"};
   max-width: ${scrollNav ? "1000px" : "100%"};
-
-  @media screen and (max-width: 720px) {
-    width: 90%;
-  }
 `;
 
 const contentWrapper = css`
@@ -34,6 +30,7 @@ const contentWrapper = css`
   transition: all 0.3s ease;
   display: flex;
   justify-content: space-between;
+  padding: 0;
 
   border-radius: 3rem;
 `;
@@ -41,14 +38,14 @@ const contentWrapper = css`
 const lightModeContainer = ({ scrollNav }: { scrollNav: boolean }) => css`
   ${contentWrapper}
 
-  padding: ${scrollNav ? "0.5rem 2rem" : "0.5rem 1rem"};
+  padding: ${scrollNav ? "0.5rem 1rem" : "0.5rem 0"};
   background-color: ${scrollNav ? "rgba(255, 255, 255, 0.95)" : "transparent"};
   box-shadow: ${scrollNav ? "rgba(0, 0, 0, 0.1) 0px 4px 12px;" : "none"};
 `;
 
 const darkModeContainer = ({ scrollNav }: { scrollNav: boolean }) => css`
   ${contentWrapper}
-  padding: ${scrollNav ? "0.5rem 2rem" : "0.5rem 1rem"};
+  padding: ${scrollNav ? "0.5rem 1rem" : "0.5rem 0"};
 
   background-color: ${scrollNav ? "rgba(0,0,0, 0.5)" : "transparent"};
   box-shadow: ${scrollNav ? "rgba(0, 0, 0, 0.1) 0px 4px 12px;" : "none"};

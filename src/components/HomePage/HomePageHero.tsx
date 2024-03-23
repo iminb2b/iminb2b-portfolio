@@ -4,6 +4,9 @@ import { contentContainer } from "@/styles/generalStyles";
 import { AppContext } from "@/context/AppContext";
 import HomePageMarqueeListItem from "./HomePageMarqueeListItem";
 import Marquee from "react-fast-marquee";
+import Link from "next/link";
+import buttonStyles from "@/styles/buttonStyles";
+import routeLinks from "@/routeLinks";
 
 const container = css`
   display: flex;
@@ -19,25 +22,20 @@ const contentWrapper = ({ darkmode }: { darkmode: boolean }) => css`
   flex-direction: column;
   justify-content: flex-end;
   height: 35rem;
-  padding-top: 5rem;
   gap: 2rem;
   width: 100%;
   border-bottom: 1px solid ${darkmode ? "#fff" : "#000"};
+
+  @media screen and (max-width: 720px) {
+    padding-top: 0;
+    height: 20rem;
+    gap: 1rem;
+  }
 `;
 const title = css`
   font-size: clamp(2.5rem, 5.15625vw, 6rem);
   font-weight: bold;
   line-height: 1.4;
-`;
-const description = css`
-  margin: 2rem 0;
-  font-size: clamp(1rem, 3vw, 1.375rem);
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  max-width: 700px;
-  line-height: 1.5;
-  width: 100%;
-  text-align: center;
-  display: flex;
 `;
 
 const jobTitle = css`
@@ -46,12 +44,19 @@ const jobTitle = css`
   font-weight: 300;
   letter-spacing: 1rem;
   font-size: 1.125rem;
+  @media screen and (max-width: 720px) {
+    font-size: 0.75rem;
+  }
 `;
 
 const marquee = ({ darkmode }: { darkmode: boolean }) => css`
   height: 12rem;
   overflow: hidden;
   position: relative;
+
+  @media screen and (max-width: 720px) {
+    height: 8rem;
+  }
 
   &::before {
     content: "";
@@ -74,6 +79,10 @@ const marquee = ({ darkmode }: { darkmode: boolean }) => css`
     background-color: ${darkmode ? "#000" : "#fff"};
   }
 `;
+const aboutLink = css`
+  display: flex;
+  justify-content: flex-end;
+`;
 
 const HomePageHero: FC = () => {
   const {
@@ -82,12 +91,12 @@ const HomePageHero: FC = () => {
 
   const stringArray = strings.HomePage.Hero.description.split("");
   console.log(stringArray);
-  // data-aos="fade-up"
   return (
     <div css={container}>
-      <div css={contentWrapper({ darkmode })}>
+      <div css={contentWrapper({ darkmode })} data-aos="fade-up">
         <h1 css={title}>NHUNG NGUYEN</h1>
         <h1 css={jobTitle}>WEB DEVELOPER</h1>
+
         <Marquee
           css={marquee({ darkmode })}
           gradient
@@ -98,6 +107,14 @@ const HomePageHero: FC = () => {
             <HomePageMarqueeListItem char={char} index={index} />
           ))}
         </Marquee>
+        <div css={aboutLink}>
+          <Link
+            css={buttonStyles({ darkmode, size: "medium" })}
+            href={routeLinks.about({ lang })}
+          >
+            About Me
+          </Link>
+        </div>
       </div>
     </div>
   );
