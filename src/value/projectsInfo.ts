@@ -5,7 +5,7 @@ import netflix from "@/assets/images/projects-screenshot/netflix-web.png";
 import amazon from "@/assets/images/projects-screenshot/amazon-web.png";
 import aa from "@/assets/images/projects-screenshot/aa-web.png";
 import factnameh from "@/assets/images/projects-screenshot/factnameh.png";
-import junPortfolio from "@/assets/images/projects-screenshot/junPortfolio.png";
+import junePortfolio from "@/assets/images/projects-screenshot/junePortfolio.png";
 
 export type ProjectInfo = {
   img: string;
@@ -32,7 +32,7 @@ export const projectInfos: ProjectInfo[] = [
     features: ["Filtering", "Responsive design"],
   },
   {
-    img: junPortfolio.src,
+    img: junePortfolio.src,
     title: "June Nguyen Portfolio",
     objectives: "Personal Website",
     description: "Personal Website for a UI/UX graduate",
