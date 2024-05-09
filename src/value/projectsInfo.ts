@@ -31,18 +31,6 @@ export const projectInfos: ProjectInfo[] = [
     features: ["Filtering", "Responsive design"],
   },
   {
-    img: netflix.src,
-    title: "Netflix",
-    objectives: "Clone Netflix UI",
-    description:
-      "A Netflix clone project to mimic the UI/UX of Netflix for learning purposes.",
-    tool: ["Typescript", "NextJs", "Emotion"],
-    link: "https://nextflix.projects.iminb2b.com/",
-    slug: "netflix",
-    sourceCode: "https://github.com/iminb2b/netflix-clone",
-    features: ["Video streaming", "Responsive design"],
-  },
-  {
     slug: "advocacyassembly",
     img: aa.src,
     title: "Advocacy Assembly",
@@ -67,6 +55,18 @@ export const projectInfos: ProjectInfo[] = [
     features: [],
   },
   {
+    slug: "explorix",
+    img: explorix.src,
+    title: "Explorix",
+    objectives: "Share travel guides and tips",
+    description:
+      "A travel website to share insightful travel guides, tips, and personal experiences from around the world.",
+    tool: ["GraphQl", "Gatsby", "Typescript"],
+    link: "https://explorix.projects.iminb2b.com",
+    sourceCode: "https://github.com/iminb2b/explorix",
+    features: ["Dynamic content", "SEO optimized", "Responsive design"],
+  },
+  {
     slug: "portfolio",
     img: portfolio.src,
     title: "Personal Portfolio",
@@ -79,18 +79,7 @@ export const projectInfos: ProjectInfo[] = [
     sourceCode: "https://github.com/iminb2b/iminb2b-portfolio",
     features: ["Multi Languages", "Darkmode", "Project gallery"],
   },
-  {
-    slug: "explorix",
-    img: explorix.src,
-    title: "Explorix",
-    objectives: "Share travel guides and tips",
-    description:
-      "A travel website to share insightful travel guides, tips, and personal experiences from around the world.",
-    tool: ["GraphQl", "Gatsby", "Typescript"],
-    link: "https://explorix.projects.iminb2b.com",
-    sourceCode: "https://github.com/iminb2b/explorix",
-    features: ["Dynamic content", "SEO optimized", "Responsive design"],
-  },
+
   {
     slug: "dolla",
     title: "Dolla",
