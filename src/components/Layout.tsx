@@ -34,7 +34,7 @@ const Layout: FC<{
   useEffect(() => {
     const darkMode = localStorage.getItem("darkmode") === "true";
 
-    dispatch({ type: "enableDarkMode", payload: darkMode });
+    dispatch({ type: "enableDarkMode", payload: darkMode ?? true });
   }, []);
 
   return (
