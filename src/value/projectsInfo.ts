@@ -5,6 +5,7 @@ import netflix from "@/assets/images/projects-screenshot/netflix-web.png";
 import amazon from "@/assets/images/projects-screenshot/amazon-web.png";
 import aa from "@/assets/images/projects-screenshot/aa-web.png";
 import factnameh from "@/assets/images/projects-screenshot/factnameh.png";
+import junPortfolio from "@/assets/images/projects-screenshot/junPortfolio.png";
 
 export type ProjectInfo = {
   img: string;
@@ -31,6 +32,17 @@ export const projectInfos: ProjectInfo[] = [
     features: ["Filtering", "Responsive design"],
   },
   {
+    img: junPortfolio.src,
+    title: "June Nguyen Portfolio",
+    objectives: "Personal Website",
+    description: "Personal Website for a UI/UX graduate",
+    tool: ["Typescript", "NextJs", "Emotion"],
+    link: "https://junenguyen.com/",
+    slug: "june-portfolio",
+    sourceCode: "https://github.com/iminb2b/June-portfolio",
+    features: ["Responsive design"],
+  },
+  {
     slug: "advocacyassembly",
     img: aa.src,
     title: "Advocacy Assembly",
@@ -55,18 +67,6 @@ export const projectInfos: ProjectInfo[] = [
     features: [],
   },
   {
-    slug: "explorix",
-    img: explorix.src,
-    title: "Explorix",
-    objectives: "Share travel guides and tips",
-    description:
-      "A travel website to share insightful travel guides, tips, and personal experiences from around the world.",
-    tool: ["GraphQl", "Gatsby", "Typescript"],
-    link: "https://explorix.projects.iminb2b.com",
-    sourceCode: "https://github.com/iminb2b/explorix",
-    features: ["Dynamic content", "SEO optimized", "Responsive design"],
-  },
-  {
     slug: "portfolio",
     img: portfolio.src,
     title: "Personal Portfolio",
@@ -79,7 +79,18 @@ export const projectInfos: ProjectInfo[] = [
     sourceCode: "https://github.com/iminb2b/iminb2b-portfolio",
     features: ["Multi Languages", "Darkmode", "Project gallery"],
   },
-
+  {
+    slug: "explorix",
+    img: explorix.src,
+    title: "Explorix",
+    objectives: "Share travel guides and tips",
+    description:
+      "A travel website to share insightful travel guides, tips, and personal experiences from around the world.",
+    tool: ["GraphQl", "Gatsby", "Typescript"],
+    link: "https://explorix.projects.iminb2b.com",
+    sourceCode: "https://github.com/iminb2b/explorix",
+    features: ["Dynamic content", "SEO optimized", "Responsive design"],
+  },
   {
     slug: "dolla",
     title: "Dolla",
