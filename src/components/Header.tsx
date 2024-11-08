@@ -20,7 +20,9 @@ const container = ({ scrollNav }: { scrollNav: boolean }) => css`
   padding: 0.5rem 1rem;
 
   width: ${scrollNav ? "80%" : "100%"};
-  max-width: ${scrollNav ? "1000px" : "100%"};
+  max-width: ${scrollNav ? "1000px" : "1200px"};
+
+  background: transparent;
 `;
 
 const contentWrapper = css`
@@ -39,7 +41,7 @@ const lightModeContainer = ({ scrollNav }: { scrollNav: boolean }) => css`
   ${contentWrapper}
 
   padding: ${scrollNav ? "0.5rem 1rem" : "0.5rem 0"};
-  background-color: ${scrollNav ? "rgba(255, 255, 255, 0.95)" : "transparent"};
+  background-color: ${scrollNav ? "rgba(86, 98,149, 0.95)" : "transparent"};
   box-shadow: ${scrollNav ? "rgba(0, 0, 0, 0.1) 0px 4px 12px;" : "none"};
 `;
 

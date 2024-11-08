@@ -16,7 +16,7 @@ const pageContainer = ({ darkmode }: { darkmode: boolean }) => css`
   flex-direction: column;
   align-items: center;
   min-height: calc(100vh);
-  background-color: ${darkmode ? colors.black : colors.white};
+  background-color: ${darkmode ? colors.black : colors.background};
   color: ${darkmode ? colors.white : colors.textPrimary};
   background-repeat: repeat-y;
   background-size: cover;

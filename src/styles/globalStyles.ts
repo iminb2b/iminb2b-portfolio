@@ -1,3 +1,4 @@
+import colors from "@/value/colors";
 import { css } from "@emotion/react";
 import { Inter } from "next/font/google";
 
@@ -94,6 +95,8 @@ const globalStyles = css`
 
     max-width: 100vw;
     font-size: 15px;
+
+    background: ${colors.background};
   }
 
   body {

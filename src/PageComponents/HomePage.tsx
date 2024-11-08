@@ -6,12 +6,22 @@ import PageMeta from "@/components/PageMeta";
 import HomePageMySkills from "@/components/HomePage/HomePageMySkills";
 import HomePageMyServices from "@/components/HomePage/HomePageMyServices";
 import HomePageAboutMe from "@/components/AboutMe/AboutMe";
+import HomePageHero2 from "@/components/HomePage/HomePageHero2";
+import hero from "@/assets/images/hero.png";
+import Image from "next/image";
+import { css } from "@emotion/react";
+
+const heroImage = css({
+  height: "800px",
+});
 
 const HomePage: NextPage = () => {
   return (
     <PageContainer>
       <PageMeta title="Min - Home Page" description={"Nhung Nguyen"} />
-      <HomePageHero />
+      <HomePageHero2 />
+
+      <Image src={hero.src} alt="" width={600} css={heroImage} height={800} />
       {/* <HomePageMyServices /> */}
       {/* <HomePageMySkills /> */}
       <HomePageProjects />
