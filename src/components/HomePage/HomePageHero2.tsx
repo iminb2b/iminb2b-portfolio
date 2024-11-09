@@ -119,11 +119,8 @@ const HomePageHero2: FC = () => {
   const { x, y } = useMousePosition();
   const cursorSize = useMemo(() => (isHovered ? 200 : 40), [isHovered]);
 
-  const stringArray = strings.HomePage.Hero.description.split("");
-
   const onMouseEnter = useCallback(() => setIsHovered(true), []);
   const onMouseLeave = useCallback(() => setIsHovered(false), []);
-  console.log(stringArray);
 
   const [vietnamTime, setVietnamTime] = useState<string>("");
   const [torontoTime, setTorontoTime] = useState<string>("");

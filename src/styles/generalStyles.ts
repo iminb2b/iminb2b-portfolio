@@ -2,7 +2,7 @@ import colors from "@/value/colors";
 import { css } from "@emotion/react";
 
 export const contentContainer = css`
-  max-width: 1400px;
+  max-width: 1200px;
   padding: 1rem;
 `;
 

@@ -3,56 +3,70 @@ import { css } from "@emotion/react";
 import colors from "@/value/colors";
 import Link from "next/link";
 import { AppContext } from "@/context/AppContext";
-import routeLinks from "@/routeLinks";
 import { ProjectInfo } from "@/value/projectsInfo";
 import buttonStyles from "@/styles/buttonStyles";
+import routeLinks from "@/routeLinks";
 
-const projectContainer = ({ darkmode }: { darkmode: boolean }) => css`
-  border-radius: 0.5rem;
-  background-color: ${darkmode ? "rgba(20,0,157,0.3)" : colors.white};
-  padding: 0;
-  width: 100%;
-  flex-direction: column;
-  gap: 2rem;
-  background-color: transparent;
-  display: flex;
-  transition: all 0.3s ease-in-out;
-`;
+const projectContainer = css(
+  {
+    width: "100%",
+    borderRadius: "10px",
+    aspectRatio: "3/2",
+    overflow: "hidden",
+    boxShadow: `0 70px 83px -60px ${colors.primary}`,
+    position: "relative",
+    transition: "0.8s",
+  },
+  {
+    ":hover": {
+      transform: "translateY(-20px)",
+      boxShadow: `0 90px 83px -20px ${colors.primary}`,
 
-const image = css`
-  border-radius: 0.5rem;
-  width: 100%;
-  min-height: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  aspect-ratio: 3/2;
-`;
-const infoContainer = css`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
+      img: {
+        transform: "scale(2)",
+        filter: "sepia(0%) hue-rotate(0deg) saturate(100%)",
+      },
 
-const toolList = css`
-  display: flex;
-  gap: 2rem;
-  padding: 0 2rem;
-  flex-wrap: wrap;
-`;
+      "#info": {
+        backdropFilter: "blur(15px)",
+        transform: "translate(0)",
+      },
+    },
+  },
+);
 
-const toolItem = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${darkmode ? colors.white : colors.black};
-  padding: 0.5rem;
-`;
+const image = css({
+  width: "100%",
+  aspectRatio: "3/2",
+  position: "absolute",
+  top: 0,
+  left: 0,
+  objectFit: "cover",
+  transition: "1s ease-in-out",
+  filter: "sepia(100%) hue-rotate(200deg) saturate(150%)",
+});
+const infoContainer = css({
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
+  color: colors.primary,
+  padding: "1rem",
+  transition: "0.8s",
+  backdropFilter: "blur(0px)",
+  transform: "translateY(100%)",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  textAlign: "center",
+  justifyContent: "center",
+  gap: "1rem",
+});
 
-const title = css`
-  font-size: 2rem;
-`;
+const description = css``;
 
-const linkContainer = css`
-  display: flex;
-  gap: 2rem;
-`;
+const title = css``;
 
 const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({
   project,
@@ -62,39 +76,21 @@ const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({
   } = useContext(AppContext);
 
   return (
-    <div css={projectContainer({ darkmode })}>
-      <Link href={routeLinks.project({ lang, slug: project.slug })}>
-        <img css={image} src={project.img} />
-      </Link>
-      <div css={infoContainer}>
+    <div css={projectContainer}>
+      {/* <Link href={routeLinks.project({ lang, slug: project.slug })}> */}
+      <img css={image} src={project.img} />
+      {/* </Link> */}
+      <div css={infoContainer} id="info">
         <h3 css={title}>{project.title}</h3>
+        <p css={description}>{project.description}</p>
 
-        <ul css={toolList}>
-          {project.tool.map((item, index) => (
-            <li key={index} css={toolItem({ darkmode })}>
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <div css={linkContainer}>
-          <Link
-            href={project.link}
-            css={buttonStyles({ darkmode })}
-            target="_blank"
-          >
-            Website
-          </Link>
-          {project.sourceCode && (
-            <Link
-              href={project.sourceCode}
-              target="_blank"
-              css={buttonStyles({ darkmode })}
-            >
-              Source Code
-            </Link>
-          )}
-        </div>
+        <Link
+          href={routeLinks.project({ lang, slug: project.slug })}
+          css={buttonStyles({ darkmode })}
+          target="_blank"
+        >
+          View More
+        </Link>
       </div>
     </div>
   );

@@ -16,6 +16,7 @@ export type ProjectInfo = {
   link: string;
   slug: string;
   sourceCode: string;
+  isWorkProject: boolean;
   features: string[];
 };
 
@@ -23,7 +24,7 @@ export const projectInfos: ProjectInfo[] = [
   {
     slug: "advocacyassembly",
     img: aa.src,
-    title: "Advocacy Assembly - Company Project",
+    title: "Advocacy Assembly",
     objectives: "",
     description:
       "My biggest success in this project is implemented the Quiz data logic.  ",
@@ -31,29 +32,32 @@ export const projectInfos: ProjectInfo[] = [
     link: "https://advocacyassembly.org/en/",
     sourceCode: "",
     features: [],
+    isWorkProject: true,
   },
   {
     slug: "factnamehBrowserExtension",
     img: factnameh.src,
-    title: "Factnameh Browser Extension - Company Project",
+    title: "Factnameh Browser Extension",
     objectives: "",
     description:
       "Factnameh Browser Extension is a fact checking extension that get data from Factnameh website.",
     tool: ["Typescript", "NextJs", "Emotion"],
     link: "https://chromewebstore.google.com/detail/%D8%A7%D9%81%D8%B2%D9%88%D9%86%D9%87-%D9%81%DA%A9%D8%AA%E2%80%8C%D9%86%D8%A7%D9%85%D9%87/mjbablipiefhfeaiddmljgaoeeodlapn",
     sourceCode: "",
+    isWorkProject: true,
     features: [],
   },
   {
     slug: "internetabad",
     img: internetAbad.src,
-    title: "Internet Abad - Company Project",
+    title: "Internet Abad",
     objectives: "",
     description:
       "My biggest success in this project is implemented the Network Map in HomePage.  ",
     tool: ["Typescript", "NextJs", "Emotion"],
     link: "https://internetabad.factnameh.com/fa",
     sourceCode: "",
+    isWorkProject: true,
     features: [],
   },
   {
@@ -65,6 +69,7 @@ export const projectInfos: ProjectInfo[] = [
     link: "https://junenguyen.com/",
     slug: "june-portfolio",
     sourceCode: "https://github.com/iminb2b/June-portfolio",
+    isWorkProject: false,
     features: ["Responsive design"],
   },
   {
@@ -76,6 +81,7 @@ export const projectInfos: ProjectInfo[] = [
     link: "https://earth.projects.iminb2b.com/",
     slug: "earth",
     sourceCode: "https://github.com/iminb2b/earth-store",
+    isWorkProject: false,
     features: ["Filtering", "Responsive design"],
   },
   {
@@ -89,6 +95,7 @@ export const projectInfos: ProjectInfo[] = [
     tool: ["Typescript", "NextJs", "Emotion"],
     link: "https://iminb2b.com",
     sourceCode: "https://github.com/iminb2b/iminb2b-portfolio",
+    isWorkProject: false,
     features: ["Multi Languages", "Darkmode", "Project gallery"],
   },
   {
@@ -101,6 +108,7 @@ export const projectInfos: ProjectInfo[] = [
     tool: ["GraphQl", "Gatsby", "Typescript"],
     link: "https://explorix.projects.iminb2b.com",
     sourceCode: "https://github.com/iminb2b/explorix",
+    isWorkProject: false,
     features: ["Dynamic content", "SEO optimized", "Responsive design"],
   },
   {
@@ -113,6 +121,7 @@ export const projectInfos: ProjectInfo[] = [
     tool: ["GraphQl", "Gatsby", "Typescript"],
     link: "https://dolla.projects.iminb2b.com/",
     sourceCode: "https://github.com/iminb2b/dolla",
+    isWorkProject: false,
     features: ["Responsive design"],
   },
 
@@ -126,6 +135,7 @@ export const projectInfos: ProjectInfo[] = [
     link: "https://amazon-nhungnguyen.surge.sh/",
     slug: "amazon",
     sourceCode: "https://github.com/iminb2b/amazon",
+    isWorkProject: false,
     features: ["Shopping cart", "Product search and filter", "User reviews"],
   },
 ];

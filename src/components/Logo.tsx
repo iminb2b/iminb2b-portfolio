@@ -5,11 +5,13 @@ import colors from "@/value/colors";
 import routeLinks from "@/routeLinks";
 import { AppContext } from "@/context/AppContext";
 
-const logo = css`
-  font-size: 2rem;
-  font-weight: 700;
-  transition: all 0.3s ease;
-`;
+const logo = css({
+  fontSize: "2rem",
+  fontWeight: "700",
+  color: colors.primary,
+  display: "flex",
+  alignItems: "center",
+});
 
 const Logo: FC = () => {
   const {
@@ -18,7 +20,21 @@ const Logo: FC = () => {
 
   return (
     <Link href={routeLinks.homePage({ lang })} css={logo}>
-      min.
+      <svg
+        width="50"
+        height="50"
+        viewBox="0 0 156 116"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect x="26" width="50" height="50" rx="10" fill="#0BE3B7" />
+        <circle cx="106" cy="26" r="25" fill="#E78FB3" />
+        <path
+          d="M84.6409 110.101C80.8529 113.466 75.1471 113.466 71.3591 110.101L30.1257 73.4765C23.2495 67.3689 27.5696 56 36.7666 56L119.233 56C128.43 56 132.75 67.3689 125.874 73.4765L84.6409 110.101Z"
+          fill="#F1C40F"
+        />
+      </svg>
+      min
     </Link>
   );
 };

@@ -9,6 +9,8 @@ const pageWrapper = css`
   position: relative;
   width: 100%;
   min-height: calc(100vh - 5rem);
+  flex-direction: column;
+  align-items: center;
 `;
 
 const PageContainer: FC<{ children: ReactNode }> = memo(

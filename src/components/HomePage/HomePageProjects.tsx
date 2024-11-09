@@ -5,6 +5,7 @@ import HomePageProjectsListItem from "./HomePageProjectsListItem";
 import { AppContext } from "@/context/AppContext";
 
 import { projectInfos } from "@/value/projectsInfo";
+import colors from "@/value/colors";
 const container = css`
   ${contentContainer}
 
@@ -38,10 +39,31 @@ const projectsContainer = css`
   }
 `;
 
-const title = css`
-  font-size: 1.5rem;
-  text-align: left;
-`;
+const title = css({
+  fontWeight: "800",
+  color: colors.primary,
+  fontSize: "4rem",
+  width: "100%",
+  position: "absolute",
+});
+
+const titleLight = css({
+  width: "100%",
+  fontFamily: '"Helvetica Neue", Arial, sans-serif',
+  fontWeight: "200",
+  letterSpacing: "1rem",
+  fontSize: "4.125rem",
+  textAlign: "right",
+  position: "absolute",
+  color: "#a4a49c",
+  bottom: "2rem",
+});
+
+const titleContainer = css({
+  position: "relative",
+  height: "6rem",
+  width: "100%",
+});
 
 const HomePageProjects: FC = () => {
   const {
@@ -50,8 +72,11 @@ const HomePageProjects: FC = () => {
 
   return (
     <div css={container}>
-      <div css={contentWrapper} data-aos="fade-up">
-        <p css={title}>WORKS</p>
+      <div css={contentWrapper}>
+        <div css={titleContainer}>
+          {/* <p css={titleLight}>FEATURED PROJECTS</p> */}
+          <p css={title}>FEATURED PROJECTS</p>
+        </div>
 
         <div css={projectsContainer}>
           {projectInfos.map((project) => (

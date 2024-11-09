@@ -107,6 +107,15 @@ const globalStyles = css`
     text-decoration: none;
   }
 
+  button {
+    border: none;
+    background: none;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
   @media (prefers-color-scheme: dark) {
     html {
       color-scheme: dark;
