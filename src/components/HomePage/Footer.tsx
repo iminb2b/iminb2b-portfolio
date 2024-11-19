@@ -26,11 +26,10 @@ const Footer: FC = () => {
     state: { lang, strings, darkmode },
   } = useContext(AppContext);
 
-  const stringArray = strings.HomePage.Hero.description.split("");
   return (
     <div css={container}>
       <div css={contentContainer}>
-        <Logo />
+        <Logo variant="secondary" />
         <div>Linkedin</div>
         <p>iminb2b[at]gmail[dot]com</p>
         <p>Copyright © 2024 Nhung Nguyen</p>
