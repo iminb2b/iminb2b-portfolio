@@ -50,6 +50,8 @@ const animation = keyframes({
 const icon = css({
   animation: animation,
   animationTimeline: "view()",
+  fontSize: "4rem",
+  height: "4rem",
 });
 
 const skillContainer = css({

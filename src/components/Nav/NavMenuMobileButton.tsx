@@ -15,7 +15,7 @@ const iconTextColumn = css`
 
 const icon = ({ darkmode }: { darkmode: boolean }) => css`
   font-size: 2rem;
-  color: ${darkmode ? colors.white : colors.black};
+  color: ${darkmode ? colors.background : colors.primary};
 `;
 
 const NavMenuMobileButton: FC<{

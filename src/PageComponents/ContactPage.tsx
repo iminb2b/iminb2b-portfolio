@@ -127,7 +127,7 @@ const line = ({ darkmode }: { darkmode: boolean }) => css`
   width: 5rem;
   height: 3px;
   border-radius: 0.25rem;
-  background-color: ${darkmode ? colors.white : colors.black};
+  background-color: ${darkmode ? colors.background : colors.primary};
 `;
 const list = css`
   display: flex;

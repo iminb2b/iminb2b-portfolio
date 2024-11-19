@@ -97,12 +97,12 @@ const infoContainer = css(
 );
 
 const icon = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${darkmode ? colors.white : colors.black};
+  color: ${darkmode ? colors.background : colors.primary};
   font-size: 1.25rem;
 `;
 
 const downloadLink = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${darkmode ? colors.white : colors.black};
+  color: ${darkmode ? colors.background : colors.primary};
   align-items: center;
   display: flex;
 

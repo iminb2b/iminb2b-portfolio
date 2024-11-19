@@ -76,7 +76,7 @@ const description = css`
 `;
 
 const toolItem = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${darkmode ? colors.white : colors.black};
+  color: ${darkmode ? colors.background : colors.primary};
   padding: 0.5rem;
 `;
 

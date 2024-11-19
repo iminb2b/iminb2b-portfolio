@@ -33,13 +33,15 @@ const icon = css({
   position: "absolute",
   bottom: "-1rem",
   left: "-0.5rem",
+  fontSize: "1rem",
+  height: "1rem",
 });
 
 const jobTitle = ({ darkmode }: { darkmode: boolean }) => css`
   font-size: 1.125rem;
   line-height: 1.6;
 
-  color: ${darkmode ? colors.white : colors.black};
+  color: ${darkmode ? colors.background : colors.primary};
 `;
 const list = css`
   padding: 0.5rem 1.5rem;
