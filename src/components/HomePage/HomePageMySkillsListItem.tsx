@@ -8,28 +8,18 @@ const container = css({
   display: "flex",
   gap: "1rem",
   alignItems: "center",
-  padding: "0.5rem 1rem",
+  padding: "1rem 2rem",
   border: `2px solid ${colors.primary}`,
-  borderRadius: "10px",
+  borderRadius: "8px",
+  textWrap: "nowrap",
 });
 
-const image = css`
-  height: 2.5rem;
-  min-height: 2.5rem;
-  aspect-ratio: 1/1;
-
-  @media screen and (max-width: 720px) {
-    height: 2.5rem;
-    min-height: 2.5rem;
-  }
-`;
-
 const title = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${darkmode ? colors.white : colors.black};
+  color: ${darkmode ? colors.background : colors.primary};
 `;
 
 const HomePageMySkillsListItem: FC<{ skill: SkillInfo }> = ({
-  skill: { name, img },
+  skill: { name },
 }) => {
   const {
     state: { darkmode },
@@ -37,7 +27,6 @@ const HomePageMySkillsListItem: FC<{ skill: SkillInfo }> = ({
 
   return (
     <div css={container}>
-      <img src={img} css={image} />
       <h2 css={title({ darkmode })}>{name}</h2>
     </div>
   );

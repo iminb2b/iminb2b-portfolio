@@ -5,21 +5,25 @@ import colors from "@/value/colors";
 import routeLinks from "@/routeLinks";
 import { AppContext } from "@/context/AppContext";
 
-const logo = css({
-  fontSize: "2rem",
-  fontWeight: "700",
-  color: colors.primary,
-  display: "flex",
-  alignItems: "center",
-});
+const logo = ({ primary }: { primary: boolean }) =>
+  css({
+    fontSize: "2rem",
+    fontWeight: "700",
+    color: primary ? colors.primary : colors.background,
+    display: "flex",
+    alignItems: "center",
+  });
 
-const Logo: FC = () => {
+const Logo: FC<{ variant: "primary" | "secondary" }> = ({ variant }) => {
   const {
     state: { lang },
   } = useContext(AppContext);
 
   return (
-    <Link href={routeLinks.homePage({ lang })} css={logo}>
+    <Link
+      href={routeLinks.homePage({ lang })}
+      css={logo({ primary: variant === "primary" })}
+    >
       <svg
         width="50"
         height="50"

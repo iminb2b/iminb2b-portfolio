@@ -7,11 +7,12 @@ import routeLinks from "@/routeLinks";
 import buttonStyles from "@/styles/buttonStyles";
 
 const container = css({
-  width: "1200px",
-  padding: "5rem 0",
+  maxWidth: "1200px",
+  padding: "5rem 1rem",
   display: "flex",
   gap: "3rem",
   alignItems: "center",
+  width: "100%",
 });
 
 const animation = keyframes({

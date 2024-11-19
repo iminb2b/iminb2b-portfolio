@@ -22,8 +22,8 @@ const container = css(contentContainer, {
   height: "100vh",
   borderBottom: `1px solid ${colors.primary}`,
   maxWidth: "1200px",
-  padding: "3rem 0",
-  width: "1200px",
+  padding: "3rem 1rem",
+  width: "100%",
 });
 
 const contentWrapper = css({
@@ -64,7 +64,6 @@ const skillContainer = css({
 
 export type SkillInfo = {
   name: string;
-  img?: string;
 };
 
 const HomePageMySkills: FC = () => {
@@ -74,39 +73,76 @@ const HomePageMySkills: FC = () => {
 
   const skillsList: SkillInfo[] = [
     {
-      img: htmlIcon.src,
-      name: "HTML5",
+      name: "Javascript",
     },
     {
-      img: reactIcon.src,
-      name: "ReactJs",
+      name: "Typescript",
     },
     {
-      img: cssIcon.src,
       name: "CSS3",
     },
     {
-      img: graphQlIcon.src,
       name: "GraphQl",
+    },
+    {
+      name: "HTML",
+    },
+    {
+      name: "Sass",
     },
   ];
 
   const skillsList2: SkillInfo[] = [
     {
-      img: jsIcon.src,
-      name: "Javascript",
+      name: " Next.js",
     },
     {
-      img: emotionIcon.src,
+      name: "React",
+    },
+    {
+      name: "Gastby",
+    },
+    {
+      name: "Node.js",
+    },
+    {
+      name: "Styled Component",
+    },
+    {
+      name: "Material Ui",
+    },
+    {
       name: "Emotion",
     },
     {
-      img: styledComponentsIcon.src,
-      name: "Styled Components",
+      name: "CapacitorJs",
+    },
+  ];
+
+  const skillsList3: SkillInfo[] = [
+    {
+      name: "Git",
     },
     {
-      img: nextjsIcon.src,
-      name: "NextJS",
+      name: "Github",
+    },
+    {
+      name: "Mattermost",
+    },
+    {
+      name: "Netlify",
+    },
+    {
+      name: "Figma",
+    },
+    {
+      name: "Firebase",
+    },
+    {
+      name: "Docker",
+    },
+    {
+      name: "Vercel",
     },
   ];
 
@@ -150,7 +186,7 @@ const HomePageMySkills: FC = () => {
             left="-15%"
             progress={scrollYProgress}
             direction="right"
-            skillsList={skillsList}
+            skillsList={skillsList3}
           />
         </div>
       </div>

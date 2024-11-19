@@ -1,9 +1,11 @@
 import { FC } from "react";
 import { css, keyframes } from "@emotion/react";
 import colors from "@/value/colors";
+import HomePageExperienceList from "../AboutMe/HomePageExperienceList";
+import { experienceList } from "@/value/aboutMe";
 
 const container = css({
-  height: "100vh",
+  minHeight: "100vh",
   width: "100%",
   display: "flex",
   maxWidth: "1200px",
@@ -64,12 +66,24 @@ const circle11 = css(circle, {
   animationTimeline: "view(auto 0%)",
 });
 
-const contentContainer = css({
-  width: "40%",
-  display: "flex",
-  position: "relative",
-  height: "100%",
+const contentContainer = css(
+  {
+    width: "50%",
+    display: "flex",
+    position: "relative",
+    height: "100%",
+  },
+  {
+    "@media screen and (max-width: 1000px)": {
+      display: "none",
+    },
+  },
+);
+
+const exerienceContainer = css({
+  width: "50%",
 });
+
 const HomePageExperience: FC = () => {
   return (
     <div css={container}>
@@ -86,7 +100,13 @@ const HomePageExperience: FC = () => {
         <div css={circle10}>E</div>
         <div css={circle11}>S</div>
       </div>
-      <div></div>
+      <div css={exerienceContainer}>
+        <HomePageExperienceList
+          experience={experienceList}
+          title="Experience"
+          showAchievement={false}
+        />
+      </div>
     </div>
   );
 };

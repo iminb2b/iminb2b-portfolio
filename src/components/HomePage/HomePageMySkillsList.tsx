@@ -7,7 +7,7 @@ import { motion, MotionValue } from "framer-motion";
 import { SkillInfo } from "./HomePageMySkills";
 const container = css({
   display: "flex",
-  gap: "2rem",
+  gap: "1rem",
 });
 
 const HomePageMySkillsList: FC<{

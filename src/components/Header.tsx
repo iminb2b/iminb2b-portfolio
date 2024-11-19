@@ -7,6 +7,7 @@ import NavList from "./Nav/NavList";
 import { useDialogStore } from "@ariakit/react";
 import NavMenuMobileButton from "./Nav/NavMenuMobileButton";
 import NavListMobile from "./Nav/NavListMobile";
+import colors from "@/value/colors";
 const container = ({ scrollNav }: { scrollNav: boolean }) => css`
   width: 100%;
   position: sticky;
@@ -21,7 +22,7 @@ const container = ({ scrollNav }: { scrollNav: boolean }) => css`
 
   width: ${scrollNav ? "80%" : "100%"};
   max-width: ${scrollNav ? "1000px" : "1200px"};
-
+  color: ${scrollNav ? colors.background : colors.primary};
   background: transparent;
 `;
 
@@ -93,7 +94,7 @@ const Header: FC = () => {
               })
         }
       >
-        <Logo />
+        <Logo variant={scrollNav ? "secondary" : "primary"} />
         <NavList />
 
         <NavMenuMobileButton dialogStore={mobileHeaderNavDialogStore} />

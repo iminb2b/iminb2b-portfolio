@@ -27,7 +27,6 @@ const Footer: FC = () => {
   } = useContext(AppContext);
 
   const stringArray = strings.HomePage.Hero.description.split("");
-  console.log(stringArray);
   return (
     <div css={container}>
       <div css={contentContainer}>

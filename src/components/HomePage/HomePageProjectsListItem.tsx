@@ -1,5 +1,5 @@
 import { FC, useContext } from "react";
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import colors from "@/value/colors";
 import Link from "next/link";
 import { AppContext } from "@/context/AppContext";
@@ -7,11 +7,22 @@ import { ProjectInfo } from "@/value/projectsInfo";
 import buttonStyles from "@/styles/buttonStyles";
 import routeLinks from "@/routeLinks";
 
+const animation = keyframes({
+  "0%": {
+    transform: "scale(0.5)",
+  },
+  "60%": {
+    transform: "scale(1)",
+  },
+});
+
 const projectContainer = css(
   {
     width: "100%",
     borderRadius: "10px",
     aspectRatio: "3/2",
+    animation: `${animation}`,
+    animationTimeline: "view()",
     overflow: "hidden",
     boxShadow: `0 70px 83px -60px ${colors.primary}`,
     position: "relative",

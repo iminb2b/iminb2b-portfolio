@@ -15,7 +15,6 @@ const HomePage: NextPage = () => {
 
       <HomePageHero2 />
 
-      {/* <Image src={hero.src} alt="" width={600} css={heroImage} height={800} /> */}
       <HomePageExperience />
       <HomePageMySkills />
       <HomePageProjects />

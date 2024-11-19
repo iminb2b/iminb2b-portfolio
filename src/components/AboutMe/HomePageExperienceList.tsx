@@ -5,11 +5,7 @@ import { ExperienceInfo } from "@/value/aboutMe";
 
 const educationContainer = css`
   width: 100%;
-  padding: 1rem 7rem;
-
-  @media screen and (max-width: 720px) {
-    padding: 1rem;
-  }
+  padding: 1rem 0;
 `;
 
 const mediumTitle = css`
@@ -24,13 +20,26 @@ const jobList = css`
 const HomePageExperienceList: FC<{
   experience: ExperienceInfo[];
   title: string;
-}> = ({ experience, title }) => {
+  showDescription?: boolean;
+  showAchievement?: boolean;
+}> = ({
+  experience,
+  title,
+  showDescription = true,
+  showAchievement = true,
+}) => {
   return (
     <div css={educationContainer}>
-      <h4 css={mediumTitle}>{title}</h4>
+      {showAchievement && <h4 css={mediumTitle}>{title}</h4>}
       <div css={jobList}>
         {experience.map((item, index) => (
-          <HomePageExperienceListItem item={item} key={index} />
+          <HomePageExperienceListItem
+            item={item}
+            key={index}
+            index={index}
+            showDescription={showDescription}
+            showAchievement={showAchievement}
+          />
         ))}
       </div>
     </div>
