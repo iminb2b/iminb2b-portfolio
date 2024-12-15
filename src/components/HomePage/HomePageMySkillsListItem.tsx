@@ -4,19 +4,34 @@ import { SkillInfo } from "./HomePageMySkills";
 import colors from "@/value/colors";
 import { AppContext } from "@/context/AppContext";
 
-const container = css({
-  display: "flex",
-  gap: "1rem",
-  alignItems: "center",
-  padding: "1rem 2rem",
-  border: `2px solid ${colors.primary}`,
-  borderRadius: "8px",
-  textWrap: "nowrap",
-});
+const container = css(
+  {
+    display: "flex",
+    gap: "1rem",
+    alignItems: "center",
+    padding: "1rem 2rem",
+    border: `2px solid ${colors.primary}`,
+    borderRadius: "8px",
+    textWrap: "nowrap",
+  },
+  {
+    "@media screen and (max-width: 1000px)": {
+      padding: "0.75rem",
+    },
+  },
+);
 
-const title = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${darkmode ? colors.background : colors.primary};
-`;
+const title = ({ darkmode }: { darkmode: boolean }) =>
+  css(
+    {
+      color: darkmode ? colors.background : colors.primary,
+    },
+    {
+      "@media screen and (max-width: 1000px)": {
+        fontSize: "1rem",
+      },
+    },
+  );
 
 const HomePageMySkillsListItem: FC<{ skill: SkillInfo }> = ({
   skill: { name },

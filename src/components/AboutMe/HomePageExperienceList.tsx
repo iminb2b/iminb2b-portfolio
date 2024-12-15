@@ -22,14 +22,17 @@ const HomePageExperienceList: FC<{
   title: string;
   showDescription?: boolean;
   showAchievement?: boolean;
+  id?: string;
 }> = ({
   experience,
   title,
   showDescription = true,
   showAchievement = true,
+  id,
+  ...remainingProps
 }) => {
   return (
-    <div css={educationContainer}>
+    <div css={educationContainer} id={id} {...remainingProps}>
       {showAchievement && <h4 css={mediumTitle}>{title}</h4>}
       <div css={jobList}>
         {experience.map((item, index) => (

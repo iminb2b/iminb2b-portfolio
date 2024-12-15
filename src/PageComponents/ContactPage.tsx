@@ -135,85 +135,6 @@ const list = css`
   align-items: center;
 `;
 
-const animation = keyframes({
-  "0%": {
-    top: "-10%",
-    opacity: 0,
-    transform: "translateX(40px) rotate(0deg)",
-  },
-  "10%": {
-    opacity: 1,
-  },
-  "20%": {
-    transform: "translateX(-40px) rotate(45deg)",
-  },
-  "40%": {
-    transform: "translateX(-40px) rotate(90deg)",
-  },
-  "60%": {
-    transform: "translateX(40px) rotate(180deg)",
-  },
-  "80%": {
-    transform: "translateX(-40px) rotate(225deg)",
-  },
-  "100%": {
-    top: "90%",
-    transform: "translateX(-40px) rotate(360deg)",
-  },
-});
-const circle = css({
-  animation: `${animation}  12s linear infinite`,
-  animationDelay: "-6s",
-  color: "#A94C50",
-  fontSize: "4rem",
-  position: "absolute",
-  top: 0,
-  left: "40%",
-});
-
-const circle2 = css(circle, {
-  animationDelay: "-11s",
-  top: "10%",
-  animationDuration: "8s",
-  left: "10%",
-  color: "#A94C50",
-  fontSize: "2rem",
-});
-
-const circle3 = css(circle, {
-  animationDelay: "-12s",
-  top: "20%",
-  animationDuration: "10s",
-  left: "30%",
-});
-const circle4 = css(circle, {
-  animationDelay: "-11s",
-  animationDuration: "6s",
-  top: "50%",
-  color: "#7B8C46",
-  left: "50%",
-});
-const circle5 = css(circle, {
-  animationDelay: "-13s",
-  animationDuration: "12s",
-  color: "#A8A85E",
-  top: "40%",
-  left: "70%",
-});
-const circle6 = css(circle, {
-  animationDelay: "-11s",
-  animationDuration: "8s",
-  top: "10%",
-  color: "#C5B74B",
-  left: "90%",
-});
-const circle7 = css(circle, {
-  animationDuration: "-14s",
-  color: "#D87A32",
-  top: "50%",
-  left: "60%",
-});
-
 const ContactPage: NextPage = () => {
   const {
     state: { darkmode },
@@ -224,16 +145,6 @@ const ContactPage: NextPage = () => {
       <PageMeta title="Min - Contact Me" description={"Nhung Nguyen"} />
 
       <div css={container}>
-        <div>
-          <FontAwesomeIcon css={circle} icon={faCanadianMapleLeaf} />
-          <FontAwesomeIcon css={circle2} icon={faCanadianMapleLeaf} />
-          <FontAwesomeIcon css={circle3} icon={faCanadianMapleLeaf} />
-          <FontAwesomeIcon css={circle4} icon={faCanadianMapleLeaf} />
-          <FontAwesomeIcon css={circle5} icon={faCanadianMapleLeaf} />
-          <FontAwesomeIcon css={circle6} icon={faCanadianMapleLeaf} />
-          <FontAwesomeIcon css={circle7} icon={faCanadianMapleLeaf} />
-        </div>
-
         <div css={contentWrapper}>
           <div css={infoContainer}>
             <h1 css={title}>Have a project in mind or just want to say hi? </h1>

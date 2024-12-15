@@ -18,10 +18,10 @@ const contentWrapper = css`
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 2rem;
+  gap: 4rem;
   padding: 2rem 0;
 
-  @media screen and (max-width: 688px) {
+  @media screen and (max-width: 1000px) {
     padding: 1rem 0;
   }
 `;
@@ -39,29 +39,25 @@ const projectsContainer = css`
   }
 `;
 
-const title = css({
-  fontWeight: "800",
-  color: colors.primary,
-  fontSize: "4rem",
-  width: "100%",
-  position: "absolute",
-});
-
-const titleLight = css({
-  width: "100%",
-  fontFamily: '"Helvetica Neue", Arial, sans-serif',
-  fontWeight: "200",
-  letterSpacing: "1rem",
-  fontSize: "4.125rem",
-  textAlign: "right",
-  position: "absolute",
-  color: "#a4a49c",
-  bottom: "2rem",
-});
+const title = css(
+  {
+    fontWeight: "800",
+    color: colors.primary,
+    fontSize: "4rem",
+    width: "100%",
+    position: "absolute",
+    marginBottom: "3rem",
+  },
+  {
+    "@media screen and (max-width: 1000px)": {
+      fontSize: "2rem",
+      marginBottom: "2rem",
+    },
+  },
+);
 
 const titleContainer = css({
   position: "relative",
-  height: "6rem",
   width: "100%",
 });
 

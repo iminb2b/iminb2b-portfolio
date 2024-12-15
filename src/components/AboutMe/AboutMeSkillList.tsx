@@ -23,7 +23,7 @@ const mediumTitle = css`
 
 const AboutMeSkillList: FC = () => {
   return (
-    <div css={educationContainer}>
+    <div css={educationContainer} id="skill">
       <h4 css={mediumTitle}>Technical Skills</h4>
       <ul css={list}>
         <li>

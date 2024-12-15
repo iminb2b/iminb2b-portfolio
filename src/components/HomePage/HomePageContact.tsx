@@ -6,14 +6,21 @@ import Link from "next/link";
 import routeLinks from "@/routeLinks";
 import buttonStyles from "@/styles/buttonStyles";
 
-const container = css({
-  maxWidth: "1200px",
-  padding: "5rem 1rem",
-  display: "flex",
-  gap: "3rem",
-  alignItems: "center",
-  width: "100%",
-});
+const container = css(
+  {
+    maxWidth: "1200px",
+    padding: "5rem 1rem",
+    display: "flex",
+    gap: "3rem",
+    alignItems: "center",
+    width: "100%",
+  },
+  {
+    "@media screen and (max-width: 1000px)": {
+      maxWidth: "100%",
+    },
+  },
+);
 
 const animation = keyframes({
   "0%": {

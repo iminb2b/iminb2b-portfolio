@@ -14,11 +14,10 @@ const HomePage: NextPage = () => {
       <PageMeta title="Min - Home Page" description={"Nhung Nguyen"} />
 
       <HomePageHero2 />
-
       <HomePageExperience />
       <HomePageMySkills />
       <HomePageProjects />
-      <HomePageContact />
+      {/* <HomePageContact /> */}
       <Footer />
     </PageContainer>
   );

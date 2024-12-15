@@ -1,4 +1,4 @@
-import { FC, useContext } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 import { css, keyframes } from "@emotion/react";
 import { sectionService, sectionTitle } from "@/styles/generalStyles";
 import { AppContext } from "@/context/AppContext";
@@ -75,11 +75,14 @@ const menuBox = css(
 const contentContainer = css({
   width: "50%",
 });
-const circleMenu = css({
-  height: "1rem",
-  width: "1rem",
-  background: colors.primary,
-});
+const circleMenu = ({ isActive }: { isActive: boolean }) =>
+  css({
+    height: "1rem",
+    width: "1rem",
+    border: isActive
+      ? `solid ${colors.primary} 0.5rem`
+      : `solid ${colors.primary} 0.2rem`,
+  });
 
 const infoContainer = css(
   {
@@ -111,10 +114,53 @@ const downloadLink = ({ darkmode }: { darkmode: boolean }) => css`
   }
 `;
 
+const listItem = ({ isActive }: { isActive: boolean }) =>
+  css({
+    fontWeight: isActive ? "bold" : "normal",
+    display: "flex",
+    gap: "1rem",
+  });
+
 const AboutMe: FC = () => {
   const {
     state: { lang, darkmode },
   } = useContext(AppContext);
+
+  const sections = [
+    { text: "Introduction", id: "intro" },
+    { text: "Technical Skills", id: "skill" },
+    { text: "Education", id: "education" },
+    { text: "Experiences", id: "experience" },
+  ];
+
+  const [activeSection, setActiveSection] = useState<string>("intro");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      sections.map((section) => {
+        const element = document.getElementById(section.id);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+
+          if (
+            scrollPosition >= offsetTop - 50 &&
+            scrollPosition < offsetTop + offsetHeight - 50
+          ) {
+            setActiveSection(section.id);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div css={container}>
@@ -132,26 +178,23 @@ const AboutMe: FC = () => {
 
       <div css={menuContainer}>
         <ul css={menuBox}>
-          <li>
-            <div css={circleMenu} />
-            Introduction
-          </li>
-          <li>
-            <div css={circleMenu} />
-            Technical Skills
-          </li>
-          <li>
-            <div css={circleMenu} />
-            Education
-          </li>
-          <li>
-            <div css={circleMenu} />
-            Experiences
-          </li>
+          {sections.map((section) => (
+            <li>
+              <a
+                href={`#${section.id}`}
+                css={listItem({ isActive: activeSection === section.id })}
+              >
+                <div
+                  css={circleMenu({ isActive: activeSection === section.id })}
+                />
+                {section.text}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
       <div css={contentContainer}>
-        <div css={infoContainer}>
+        <div css={infoContainer} id="intro">
           <h2>Hi! I am Min.</h2>
           <p>
             Experienced Frontend Developer skilled in building efficient,
@@ -179,10 +222,15 @@ const AboutMe: FC = () => {
 
         <AboutMeSkillList />
 
-        <HomePageExperienceList experience={educationList} title="Education" />
+        <HomePageExperienceList
+          experience={educationList}
+          title="Education"
+          id={"education"}
+        />
         <HomePageExperienceList
           experience={experienceList}
           title="Experience"
+          id="experience"
         />
       </div>
     </div>

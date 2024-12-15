@@ -1,10 +1,12 @@
-import { FC, useContext } from "react";
+import { FC, useContext, useEffect, useRef } from "react";
 import { css, keyframes } from "@emotion/react";
 import colors from "@/value/colors";
 import { AppContext } from "@/context/AppContext";
 import { ExperienceInfo } from "@/value/aboutMe";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons/faPaperPlane";
+import Lenis from "lenis";
+import { useScroll, motion, useTransform } from "framer-motion";
 const container = css({ display: "flex", gap: "1rem" });
 const contentContainer = css({ display: "flex", flexDirection: "column" });
 
@@ -21,12 +23,12 @@ const lineAnimation = keyframes({
 });
 
 const line = css({
-  height: "0",
+  // height: "0",
   border: "2px dashed",
   width: "2px",
   transform: "translateY(20px)",
-  animation: lineAnimation,
-  animationTimeline: "view(auto 10%)",
+  // animation: lineAnimation,
+  // animationTimeline: "view(auto 10%)",
   position: "relative",
 });
 const icon = css({
@@ -74,15 +76,33 @@ const HomePageExperienceListItem: FC<{
     state: { darkmode },
   } = useContext(AppContext);
 
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    const raf = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+  }, []);
+
+  const ref = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const height = useTransform(scrollYProgress, [0, 1], ["0%", "110%"]);
+
   return (
-    <div css={container}>
+    <div css={container} ref={ref}>
       <div css={borderContainer}>
         {index === 0 && (
-          <>
-            <div css={line}>
-              <FontAwesomeIcon css={icon} icon={faPaperPlane} />
-            </div>
-          </>
+          <motion.div css={line} style={{ height }}>
+            <FontAwesomeIcon css={icon} icon={faPaperPlane} />
+          </motion.div>
         )}
       </div>
       <div css={contentContainer}>
