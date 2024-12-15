@@ -18,7 +18,7 @@ const contentWrapper = css`
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 4rem;
+  gap: 8rem;
   padding: 2rem 0;
 
   @media screen and (max-width: 1000px) {
