@@ -6,14 +6,21 @@ import { experienceList } from "@/value/aboutMe";
 import Lenis from "lenis";
 import { useScroll, useTransform, motion, useSpring } from "framer-motion";
 
-const container = css({
-  minHeight: "100vh",
-  width: "100%",
-  display: "flex",
-  maxWidth: "1200px",
-  borderTop: `1px solid ${colors.primary}`,
-  padding: "5rem 0",
-});
+const container = css(
+  {
+    minHeight: "100vh",
+    width: "100%",
+    display: "flex",
+    maxWidth: "1200px",
+    borderTop: `1px solid ${colors.primary}`,
+    padding: "5rem 0",
+  },
+  {
+    "@media screen and (max-width: 1000px)": {
+      padding: "1rem 0",
+    },
+  },
+);
 
 const circle = css({
   fontWeight: "800",
@@ -45,7 +52,21 @@ const exerienceContainer = css(
   {
     "@media screen and (max-width: 1000px)": {
       width: "100%",
-      padding: "0 1rem",
+      padding: "0",
+    },
+  },
+);
+
+const title = css(
+  {
+    fontWeight: "800",
+    color: colors.primary,
+    fontSize: "1.5rem",
+    width: "100%",
+  },
+  {
+    "@media screen and (min-width: 1000px)": {
+      display: "none",
     },
   },
 );
@@ -95,6 +116,7 @@ const HomePageExperience: FC = () => {
         })}
       </div>
       <div css={exerienceContainer}>
+        <div css={title}>EXPERIENCES</div>
         <HomePageExperienceList
           experience={experienceList}
           title="Experience"

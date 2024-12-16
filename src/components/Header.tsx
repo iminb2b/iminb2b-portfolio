@@ -2,7 +2,6 @@ import { FC, useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { AppContext } from "@/context/AppContext";
 import Logo from "./Logo";
-import { contentContainer } from "@/styles/generalStyles";
 import NavList from "./Nav/NavList";
 import { useDialogStore } from "@ariakit/react";
 import NavMenuMobileButton from "./Nav/NavMenuMobileButton";
@@ -18,17 +17,15 @@ const container = ({ scrollNav }: { scrollNav: boolean }) => css`
   z-index: 10;
   justify-content: center;
   transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0;
 
-  width: ${scrollNav ? "80%" : "100%"};
+  width: ${scrollNav ? "90%" : "100%"};
   max-width: ${scrollNav ? "1000px" : "1200px"};
   color: ${scrollNav ? colors.background : colors.primary};
   background: transparent;
 `;
 
 const contentWrapper = css`
-  ${contentContainer}
-
   width: 100%;
   transition: all 0.3s ease;
   display: flex;
@@ -41,14 +38,14 @@ const contentWrapper = css`
 const lightModeContainer = ({ scrollNav }: { scrollNav: boolean }) => css`
   ${contentWrapper}
 
-  padding: ${scrollNav ? "0.5rem 1rem" : "0.5rem 0"};
+  padding: ${scrollNav ? "0.15rem 1rem" : "0.5rem 1rem"};
   background-color: ${scrollNav ? "rgba(86, 98,149, 0.95)" : "transparent"};
   box-shadow: ${scrollNav ? "rgba(0, 0, 0, 0.1) 0px 4px 12px;" : "none"};
 `;
 
 const darkModeContainer = ({ scrollNav }: { scrollNav: boolean }) => css`
   ${contentWrapper}
-  padding: ${scrollNav ? "0.5rem 1rem" : "0.5rem 0"};
+  padding: ${scrollNav ? "0.15rem 1rem" : "0.5rem 1rem"};
 
   background-color: ${scrollNav ? "rgba(0,0,0, 0.5)" : "transparent"};
   box-shadow: ${scrollNav ? "rgba(0, 0, 0, 0.1) 0px 4px 12px;" : "none"};
@@ -78,26 +75,25 @@ const Header: FC = () => {
     mobileHeaderNavDialogStore.useState("mounted");
 
   return (
-    <div
-      css={container({
-        scrollNav: mobileHeaderNavDialogIsMounted || scrollNav,
-      })}
-    >
+    <div css={container({ scrollNav })}>
       <div
         css={
           darkmode
             ? darkModeContainer({
-                scrollNav: mobileHeaderNavDialogIsMounted || scrollNav,
+                scrollNav,
               })
             : lightModeContainer({
-                scrollNav: mobileHeaderNavDialogIsMounted || scrollNav,
+                scrollNav,
               })
         }
       >
         <Logo variant={scrollNav ? "secondary" : "primary"} />
         <NavList />
 
-        <NavMenuMobileButton dialogStore={mobileHeaderNavDialogStore} />
+        <NavMenuMobileButton
+          dialogStore={mobileHeaderNavDialogStore}
+          scrollNav={scrollNav}
+        />
 
         {mobileHeaderNavDialogIsMounted && (
           <NavListMobile dialogStore={mobileHeaderNavDialogStore} />

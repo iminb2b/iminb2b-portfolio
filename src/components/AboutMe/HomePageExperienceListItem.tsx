@@ -8,7 +8,11 @@ import { faPaperPlane } from "@fortawesome/free-solid-svg-icons/faPaperPlane";
 import Lenis from "lenis";
 import { useScroll, motion, useTransform } from "framer-motion";
 const container = css({ display: "flex", gap: "1rem" });
-const contentContainer = css({ display: "flex", flexDirection: "column" });
+const contentContainer = css({
+  display: "flex",
+  flexDirection: "column",
+  gap: "0.5rem",
+});
 
 const borderContainer = css({
   width: "1rem",
@@ -16,19 +20,10 @@ const borderContainer = css({
   position: "relative",
 });
 
-const lineAnimation = keyframes({
-  "100%": {
-    height: "110%",
-  },
-});
-
 const line = css({
-  // height: "0",
   border: "2px dashed",
   width: "2px",
   transform: "translateY(20px)",
-  // animation: lineAnimation,
-  // animationTimeline: "view(auto 10%)",
   position: "relative",
 });
 const icon = css({
@@ -45,18 +40,20 @@ const jobTitle = ({ darkmode }: { darkmode: boolean }) => css`
 
   color: ${darkmode ? colors.background : colors.primary};
 `;
-const list = css`
-  padding: 0.5rem 1.5rem;
-  list-style-type: circle !important;
-  line-height: 1.6;
 
-  @media screen and (max-width: 688px) {
-    padding: 0.5rem 1rem;
-  }
-`;
+const list = css({
+  padding: "0.5rem ",
+  gap: "0.5rem",
+  display: "flex",
+  flexDirection: "column",
+  lineHeight: "1.4",
+});
+
+const listItem = css({
+  listStyleType: "circle !important",
+});
 
 const descriptionContainer = css`
-  gap: 0.5rem;
   display: flex;
   flex-direction: column;
 `;
@@ -107,7 +104,7 @@ const HomePageExperienceListItem: FC<{
       </div>
       <div css={contentContainer}>
         <h4 css={jobTitle({ darkmode })}>{name}</h4>
-        <b>{date}</b>
+        <i>{date}</i>
         {relevantCourse && (
           <p>
             <b> Relevant Coursework: </b>
@@ -119,7 +116,9 @@ const HomePageExperienceListItem: FC<{
             <b> Description: </b>
             <ul css={list}>
               {description.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index} css={listItem}>
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
@@ -129,7 +128,9 @@ const HomePageExperienceListItem: FC<{
             <b>Achievement:</b>
             <ul css={list}>
               {achievements.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index} css={listItem}>
+                  {item}
+                </li>
               ))}
             </ul>
           </div>

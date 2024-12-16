@@ -6,13 +6,20 @@ import routeLinks from "@/routeLinks";
 import { AppContext } from "@/context/AppContext";
 
 const logo = ({ primary }: { primary: boolean }) =>
-  css({
-    fontSize: "2rem",
-    fontWeight: "700",
-    color: primary ? colors.primary : colors.background,
-    display: "flex",
-    alignItems: "center",
-  });
+  css(
+    {
+      fontSize: "2rem",
+      fontWeight: "700",
+      color: primary ? colors.primary : colors.background,
+      display: "flex",
+      alignItems: "center",
+    },
+    {
+      "@media screen and (max-width: 1000px)": {
+        fontSize: "1.5rem",
+      },
+    },
+  );
 
 const Logo: FC<{ variant: "primary" | "secondary" }> = ({ variant }) => {
   const {
@@ -25,8 +32,8 @@ const Logo: FC<{ variant: "primary" | "secondary" }> = ({ variant }) => {
       css={logo({ primary: variant === "primary" })}
     >
       <svg
-        width="50"
-        height="50"
+        width="40"
+        height="40"
         viewBox="0 0 156 116"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

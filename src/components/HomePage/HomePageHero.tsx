@@ -16,7 +16,7 @@ const container = ({ darkmode }: { darkmode: boolean }) =>
     height: "calc(100vh - 50px)",
     position: "relative",
     width: "100%",
-    backgroundColor: darkmode ? colors.black : colors.background,
+    backgroundColor: darkmode ? colors.primary : colors.background,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -61,7 +61,6 @@ const maskContainer = css(
     boxSizing: "border-box",
     width: "100%",
     height: "100%",
-    padding: "0 1rem",
   },
   {
     "@media screen and (max-width: 600px)": {
@@ -128,7 +127,7 @@ const experienceContainer = css({
   width: "100%",
 });
 
-const HomePageHero2: FC = () => {
+const HomePageHero: FC = () => {
   const {
     state: { lang, strings, darkmode },
   } = useContext(AppContext);
@@ -230,4 +229,4 @@ const HomePageHero2: FC = () => {
   );
 };
 
-export default HomePageHero2;
+export default HomePageHero;

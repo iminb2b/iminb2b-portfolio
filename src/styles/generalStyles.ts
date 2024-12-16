@@ -1,11 +1,17 @@
 import colors from "@/value/colors";
 import { css } from "@emotion/react";
 
-export const contentContainer = css`
-  max-width: 1200px;
-  padding: 1rem;
-`;
-
+export const contentContainer = css(
+  {
+    maxWidth: "1200px",
+  },
+  {
+    "@media screen and (max-width: 1200px)": {
+      maxWidth: "100%",
+      padding: "0 1rem",
+    },
+  },
+);
 export const sectionService = ({ darkmode }: { darkmode: boolean }) => css`
   font-size: clamp(1rem, 2vw, 1.375rem);
   color: ${darkmode ? colors.white : colors.textPrimary};

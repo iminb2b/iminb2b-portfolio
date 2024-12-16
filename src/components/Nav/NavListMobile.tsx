@@ -9,28 +9,29 @@ import { Dialog, DialogStore } from "@ariakit/react/dialog";
 import colors from "@/value/colors";
 import DarkModeSettings from "./DarkModeSettings";
 
-const container = ({ darkmode }: { darkmode: boolean }) => css`
-  display: flex;
-  top: 4.5rem;
-  left: 0;
-  background-color: ${darkmode ? colors.black : colors.white};
-  position: fixed;
-  z-index: 10;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
-  padding: 7rem 3rem;
-  box-shadow: ${darkmode
-    ? "rgba(255, 255, 255, 0.1) 0px 4px 12px;"
-    : "rgba(0, 0, 0, 0.1) 0px 4px 12px;"};
+const container = ({ darkmode }: { darkmode: boolean }) =>
+  css({
+    display: "flex",
+    top: "4.5rem",
+    left: 0,
+    backgroundColor: darkmode ? colors.primary : colors.background,
+    position: "fixed",
+    zIndex: 10,
+    flexDirection: "column",
+    gap: "1.5rem",
+    alignItems: "center",
+    padding: "7rem 3rem",
+    boxShadow: darkmode
+      ? "rgba(255, 255, 255, 0.1) 0px 4px 12px"
+      : "rgba(0, 0, 0, 0.1) 0px 4px 12px",
+    width: "100%",
+    height: "100%",
+    color: darkmode ? colors.white : colors.textPrimary,
 
-  width: 100%;
-  color: ${darkmode ? colors.white : colors.textPrimary};
-
-  @media screen and (min-width: 720px) {
-    display: none;
-  }
-`;
+    " @media screen and (min-width: 720px)": {
+      display: "none",
+    },
+  });
 
 export type NavInfo = {
   name: string;

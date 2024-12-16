@@ -3,21 +3,24 @@ import PageContainer from "@/components/PageContent";
 import { NextPage } from "next";
 import PageMeta from "@/components/PageMeta";
 import HomePageMySkills from "@/components/HomePage/HomePageMySkills";
-import HomePageHero2 from "@/components/HomePage/HomePageHero2";
+import HomePageHero from "@/components/HomePage/HomePageHero";
 import HomePageExperience from "@/components/HomePage/HomePageExperiences";
 import HomePageContact from "@/components/HomePage/HomePageContact";
 import Footer from "@/components/HomePage/Footer";
+import { contentContainer } from "@/styles/generalStyles";
 
 const HomePage: NextPage = () => {
   return (
     <PageContainer>
       <PageMeta title="Min - Home Page" description={"Nhung Nguyen"} />
+      <div css={contentContainer}>
+        <HomePageHero />
+        <HomePageExperience />
+        <HomePageMySkills />
+        <HomePageProjects />
+        {/* <HomePageContact /> */}
+      </div>
 
-      <HomePageHero2 />
-      <HomePageExperience />
-      <HomePageMySkills />
-      <HomePageProjects />
-      {/* <HomePageContact /> */}
       <Footer />
     </PageContainer>
   );

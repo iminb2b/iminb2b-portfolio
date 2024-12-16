@@ -7,8 +7,6 @@ import { AppContext } from "@/context/AppContext";
 import { projectInfos } from "@/value/projectsInfo";
 import colors from "@/value/colors";
 const container = css`
-  ${contentContainer}
-
   margin: auto;
   width: 100%;
 `;
@@ -23,6 +21,7 @@ const contentWrapper = css`
 
   @media screen and (max-width: 1000px) {
     padding: 1rem 0;
+    gap: 3rem;
   }
 `;
 
@@ -50,8 +49,7 @@ const title = css(
   },
   {
     "@media screen and (max-width: 1000px)": {
-      fontSize: "2rem",
-      marginBottom: "2rem",
+      fontSize: "1.5rem",
     },
   },
 );

@@ -13,14 +13,15 @@ const iconTextColumn = css`
   }
 `;
 
-const icon = ({ darkmode }: { darkmode: boolean }) => css`
+const icon = ({ scrollNav }: { scrollNav: boolean }) => css`
   font-size: 2rem;
-  color: ${darkmode ? colors.background : colors.primary};
+  color: ${scrollNav ? colors.background : colors.primary};
 `;
 
 const NavMenuMobileButton: FC<{
   dialogStore: DialogStore;
-}> = memo(({ dialogStore }) => {
+  scrollNav: boolean;
+}> = memo(({ dialogStore, scrollNav }) => {
   const {
     state: { darkmode },
   } = useContext(AppContext);
@@ -29,9 +30,9 @@ const NavMenuMobileButton: FC<{
   return (
     <DialogDisclosure css={iconTextColumn} store={dialogStore}>
       {dialogIsMounted ? (
-        <CloseIcon css={icon({ darkmode })} />
+        <CloseIcon css={icon({ scrollNav })} />
       ) : (
-        <MenuIcon css={icon({ darkmode })} />
+        <MenuIcon css={icon({ scrollNav })} />
       )}
     </DialogDisclosure>
   );

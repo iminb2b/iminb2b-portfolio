@@ -10,13 +10,11 @@ import Lenis from "lenis";
 import { useScroll, useTransform, motion } from "framer-motion";
 
 const container = css(
-  contentContainer,
   {
     height: "100vh",
     border: `1px solid ${colors.primary}`,
     borderRadius: "8px",
     maxWidth: "1200px",
-    padding: "3rem 0",
     maxHeight: "50rem",
     width: "100%",
   },
@@ -34,10 +32,12 @@ const contentWrapper = css(
     flexDirection: "column",
     gap: "3rem",
     height: "100%",
+    padding: "3rem 0",
   },
   {
     "@media screen and (max-width: 1000px)": {
       gap: "2rem",
+      padding: "1rem 0",
     },
   },
 );

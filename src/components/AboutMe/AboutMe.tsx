@@ -1,9 +1,7 @@
 import { FC, useContext, useEffect, useState } from "react";
 import { css, keyframes } from "@emotion/react";
-import { sectionService, sectionTitle } from "@/styles/generalStyles";
 import { AppContext } from "@/context/AppContext";
 import colors from "@/value/colors";
-import about from "@/assets/images/about.png";
 import HomePageExperienceList from "./HomePageExperienceList";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { educationList, experienceList } from "@/value/aboutMe";
@@ -11,7 +9,6 @@ import AboutMeSkillList from "./AboutMeSkillList";
 const container = css({
   width: "100%",
   display: "flex",
-  maxWidth: "1200px",
   borderTop: `1px solid ${colors.primary}`,
   borderBottom: `1px solid ${colors.primary}`,
   padding: "5rem 0",
@@ -31,20 +28,33 @@ const circle = css({
   animationTimeline: "view(auto 90%)",
   fontWeight: "800",
   color: colors.primary,
-  // transform: "rotate(45deg)",
   height: "max-content",
   width: "max-content",
   fontSize: "4.25rem",
 });
 
-const aboutContainer = css({
-  height: "100%",
-  width: "15%",
-});
-const menuContainer = css({
-  width: "20%",
-  height: "100%",
-});
+const aboutContainer = css(
+  {
+    height: "100%",
+    width: "15%",
+  },
+  {
+    "@media screen and (max-width: 1000px)": {
+      display: "none",
+    },
+  },
+);
+const menuContainer = css(
+  {
+    width: "20%",
+    height: "100%",
+  },
+  {
+    "@media screen and (max-width: 1000px)": {
+      display: "none",
+    },
+  },
+);
 const aboutBox = css({
   width: "5rem",
   display: "flex",
@@ -72,9 +82,16 @@ const menuBox = css(
   },
 );
 
-const contentContainer = css({
-  width: "50%",
-});
+const contentContainer = css(
+  {
+    width: "50%",
+  },
+  {
+    "@media screen and (max-width: 1000px)": {
+      width: "100%",
+    },
+  },
+);
 const circleMenu = ({ isActive }: { isActive: boolean }) =>
   css({
     height: "1rem",

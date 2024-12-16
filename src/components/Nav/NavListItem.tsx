@@ -16,7 +16,7 @@ const link = ({ darkmode }: { darkmode: boolean }) => css`
       position: absolute;
       bottom: -4px;
       height: 2px;
-      background-color: ${darkmode ? colors.white : colors.textPrimary};
+      background-color: ${colors.background};
       width: 80%;
       left: 10%;
     }
@@ -24,7 +24,7 @@ const link = ({ darkmode }: { darkmode: boolean }) => css`
 `;
 
 const activeLink = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${darkmode ? colors.background : colors.primary};
+  color: ${colors.background};
   position: relative;
   text-transform: uppercase;
 
@@ -33,7 +33,7 @@ const activeLink = ({ darkmode }: { darkmode: boolean }) => css`
     position: absolute;
     bottom: -4px;
     height: 2px;
-    background-color: ${darkmode ? colors.background : colors.primary};
+    background-color: ${colors.background};
     width: 80%;
     left: 10%;
   }
