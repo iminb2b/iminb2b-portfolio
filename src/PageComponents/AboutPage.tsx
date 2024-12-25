@@ -3,6 +3,7 @@ import { NextPage } from "next";
 import PageMeta from "@/components/PageMeta";
 import HomePageAboutMe from "@/components/AboutMe/AboutMe";
 import { contentContainer } from "@/styles/generalStyles";
+import { useEffect } from "react";
 
 const AboutPage: NextPage = () => {
   return (

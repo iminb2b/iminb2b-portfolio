@@ -24,6 +24,7 @@
     "@mui/icons-material": "^5.15.1",
     "@mui/material": "^5.15.1",
     "aos": "^2.3.4",
+    "firebase": "^11.1.0",
     "framer-motion": "11.0.10",
     "googleapis": "^129.0.0",
     "keen-slider": "^6.8.6",

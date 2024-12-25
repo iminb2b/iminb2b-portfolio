@@ -4,11 +4,9 @@ import type { AppProps } from "next/app";
 import stringsEn from "@/strings/stringsEn";
 import stringsVi from "@/strings/stringsVi";
 import { useRouter } from "next/router";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { AppContextType, AppProvider } from "@/context/AppContext";
-import { useEffect } from "react";
-import routeLinks from "@/routeLinks";
+import useFirebaseAnalytics from "@/hooks/useFirebaseAnlalytics";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -23,11 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
     darkmode: true,
   };
 
-  useEffect(() => {
-    AOS.init({
-      duration: 600,
-    });
-  }, []);
+  useFirebaseAnalytics();
 
   if (pageProps.error) {
     return (

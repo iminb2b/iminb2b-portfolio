@@ -8,6 +8,7 @@ import HomePageExperience from "@/components/HomePage/HomePageExperiences";
 import HomePageContact from "@/components/HomePage/HomePageContact";
 import Footer from "@/components/HomePage/Footer";
 import { contentContainer } from "@/styles/generalStyles";
+import { useEffect } from "react";
 
 const HomePage: NextPage = () => {
   return (
