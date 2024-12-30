@@ -33,24 +33,25 @@ const textContainer = css({
   background: "transparent",
 });
 
-const mask = css(
-  textContainer,
-  {
-    position: "absolute",
-    maskImage: `url("../../../mask.svg")`,
-    background: colors.primary,
-    maskRepeat: "no-repeat",
-    color: colors.background,
-    height: "100%",
-    width: "100%",
-    top: "0",
-  },
-  {
-    "@media (pointer: coarse)": {
-      display: "none",
+const mask = ({ darkmode }: { darkmode: boolean }) =>
+  css(
+    textContainer,
+    {
+      position: "absolute",
+      maskImage: `url("../../../mask.svg")`,
+      background: darkmode ? colors.background : colors.primary,
+      maskRepeat: "no-repeat",
+      color: darkmode ? colors.primary : colors.background,
+      height: "100%",
+      width: "100%",
+      top: "0",
     },
-  },
-);
+    {
+      "@media (pointer: coarse)": {
+        display: "none",
+      },
+    },
+  );
 const maskContainer = css(
   {
     display: "flex",
@@ -68,9 +69,7 @@ const maskContainer = css(
     },
   },
 );
-const body = css(maskContainer, {
-  color: colors.primary,
-});
+const body = css(maskContainer, {});
 
 const title = css({
   fontSize: "clamp(3.5rem, 5.15625vw, 6rem)",
@@ -176,7 +175,7 @@ const HomePageHero: FC = () => {
   return (
     <div css={container({ darkmode })}>
       <motion.div
-        css={mask}
+        css={mask({ darkmode })}
         animate={{
           WebkitMaskPosition: `${x - cursorSize / 2}px ${y - cursorSize / 2}px`,
           WebkitMaskSize: `${cursorSize}px`,
