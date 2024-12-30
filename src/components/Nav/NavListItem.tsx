@@ -5,7 +5,7 @@ import { NavInfo } from "./NavList";
 import colors from "@/value/colors";
 import { AppContext } from "@/context/AppContext";
 
-const link = ({ darkmode }: { darkmode: boolean }) => css`
+const link = css`
   transition: all 0.3s ease;
   position: relative;
   text-transform: uppercase;
@@ -23,20 +23,10 @@ const link = ({ darkmode }: { darkmode: boolean }) => css`
   }
 `;
 
-const activeLink = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${colors.background};
+const activeLink = css`
   position: relative;
   text-transform: uppercase;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    height: 2px;
-    background-color: ${colors.background};
-    width: 80%;
-    left: 10%;
-  }
+  font-weight: 800;
 `;
 
 const NavListItem: FC<{
@@ -48,10 +38,7 @@ const NavListItem: FC<{
   } = useContext(AppContext);
 
   return (
-    <Link
-      href={item.url}
-      css={isActive ? activeLink({ darkmode }) : link({ darkmode })}
-    >
+    <Link href={item.url} css={isActive ? activeLink : link}>
       {item.name}
     </Link>
   );

@@ -4,7 +4,6 @@ import type { AppProps } from "next/app";
 import stringsEn from "@/strings/stringsEn";
 import stringsVi from "@/strings/stringsVi";
 import { useRouter } from "next/router";
-import "aos/dist/aos.css";
 import { AppContextType, AppProvider } from "@/context/AppContext";
 import useFirebaseAnalytics from "@/hooks/useFirebaseAnlalytics";
 import { useEffect, useState } from "react";

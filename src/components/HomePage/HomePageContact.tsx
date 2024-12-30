@@ -18,6 +18,7 @@ const container = css(
   {
     "@media screen and (max-width: 1000px)": {
       maxWidth: "100%",
+      display: "none",
     },
   },
 );
@@ -91,7 +92,6 @@ const title = css({
   fontSize: "clamp(2.5rem, 5.15625vw, 4rem)",
   fontWeight: "bold",
   lineHeight: 1.4,
-  color: colors.primary,
   flex: 1,
   display: "flex",
 });

@@ -5,7 +5,6 @@ import PageMeta from "./PageMeta";
 import { contentContainer } from "@/styles/generalStyles";
 import { useContext } from "react";
 import { AppContext } from "@/context/AppContext";
-import colors from "@/value/colors";
 import buttonStyles from "@/styles/buttonStyles";
 import routeLinks from "@/routeLinks";
 import Link from "next/link";
@@ -18,14 +17,13 @@ const container = css`
   padding-top: 10rem;
 `;
 
-const contentWrapper = ({ darkmode }: { darkmode: boolean }) => css`
+const contentWrapper = css`
   ${contentContainer}
 
   gap: 2rem;
   display: flex;
   flex-direction: column;
   text-align: center;
-  color: ${darkmode ? colors.background : colors.primary};
 `;
 
 const error404 = css`
@@ -42,7 +40,7 @@ const ErrorPageContent: NextPage = () => {
     <PageContainer>
       <PageMeta title="Page Not Found" description="Page Not Found" />
       <div css={container}>
-        <div css={contentWrapper({ darkmode })}>
+        <div css={contentWrapper}>
           <div>
             <p css={error404}>404</p>
             <h1>ERROR: Page Not Found</h1>

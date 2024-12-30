@@ -22,7 +22,6 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/icons-material": "^5.15.1",
     "@mui/material": "^5.15.1",
-    "aos": "^2.3.4",
     "firebase": "^11.1.0",
     "framer-motion": "11.0.10",
     "lenis": "^1.1.16",
@@ -33,7 +32,6 @@
     "ts-pattern": "^5.0.8"
   },
   "devDependencies": {
-    "@types/aos": "^3.0.7",
     "@types/node": "^20.17.10",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",

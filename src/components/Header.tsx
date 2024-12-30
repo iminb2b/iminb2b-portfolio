@@ -49,6 +49,7 @@ const darkModeContainer = ({ scrollNav }: { scrollNav: boolean }) => css`
 
   background-color: ${scrollNav ? "rgba(0,0,0, 0.5)" : "transparent"};
   box-shadow: ${scrollNav ? "rgba(0, 0, 0, 0.1) 0px 4px 12px;" : "none"};
+  color: ${colors.background};
 `;
 
 const Header: FC = () => {
@@ -87,7 +88,7 @@ const Header: FC = () => {
               })
         }
       >
-        <Logo variant={scrollNav ? "secondary" : "primary"} />
+        <Logo />
         <NavList />
 
         <NavMenuMobileButton

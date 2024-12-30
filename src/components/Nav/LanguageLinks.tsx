@@ -12,18 +12,6 @@ const link = css`
   position: relative;
   display: flex;
   gap: 0.35rem;
-  /*
-  &:hover {
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -4px;
-      height: 2px;
-      background-color: ${colors.textPrimary};
-      width: 80%;
-      left: 10%;
-    }
-  } */
 `;
 
 const LanguageLinks: FC<{

@@ -75,8 +75,7 @@ const description = css`
   line-height: 1.5;
 `;
 
-const toolItem = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${darkmode ? colors.background : colors.primary};
+const toolItem = css`
   padding: 0.5rem;
 `;
 
@@ -121,7 +120,7 @@ const ProjectPage: NextPage = () => {
               <h3 css={mediumText}>Tools</h3>
               <ul css={toolList}>
                 {project.tool.map((item, index) => (
-                  <li key={index} css={toolItem({ darkmode })}>
+                  <li key={index} css={toolItem}>
                     {item}
                   </li>
                 ))}
@@ -131,7 +130,7 @@ const ProjectPage: NextPage = () => {
               )}
               <ul css={toolList}>
                 {project.features.map((item, index) => (
-                  <li key={index} css={toolItem({ darkmode })}>
+                  <li key={index} css={toolItem}>
                     {item}
                   </li>
                 ))}

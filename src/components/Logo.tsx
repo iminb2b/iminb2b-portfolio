@@ -1,37 +1,31 @@
 import Link from "next/link";
 import { FC, useContext } from "react";
 import { css } from "@emotion/react";
-import colors from "@/value/colors";
 import routeLinks from "@/routeLinks";
 import { AppContext } from "@/context/AppContext";
 
-const logo = ({ primary }: { primary: boolean }) =>
-  css(
-    {
-      fontSize: "2rem",
-      fontWeight: "700",
-      color: primary ? colors.primary : colors.background,
-      display: "flex",
-      alignItems: "center",
-      gap: "0.5rem",
+const logo = css(
+  {
+    fontSize: "2rem",
+    fontWeight: "700",
+    display: "flex",
+    alignItems: "center",
+    gap: "0.5rem",
+  },
+  {
+    "@media screen and (max-width: 1000px)": {
+      fontSize: "1.5rem",
     },
-    {
-      "@media screen and (max-width: 1000px)": {
-        fontSize: "1.5rem",
-      },
-    },
-  );
+  },
+);
 
-const Logo: FC<{ variant: "primary" | "secondary" }> = ({ variant }) => {
+const Logo: FC = () => {
   const {
     state: { lang },
   } = useContext(AppContext);
 
   return (
-    <Link
-      href={routeLinks.homePage({ lang })}
-      css={logo({ primary: variant === "primary" })}
-    >
+    <Link href={routeLinks.homePage({ lang })} css={logo}>
       <svg
         width="21"
         height="21"

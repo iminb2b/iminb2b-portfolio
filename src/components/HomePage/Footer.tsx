@@ -29,7 +29,7 @@ const Footer: FC = () => {
   return (
     <div css={container}>
       <div css={contentContainer}>
-        <Logo variant="secondary" />
+        <Logo />
         <div>Linkedin</div>
         <p>iminb2b[at]gmail[dot]com</p>
         <p>Copyright © 2024 Nhung Nguyen</p>

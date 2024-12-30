@@ -59,8 +59,7 @@ const ProjectsPageContent: FC = () => {
 
   return (
     <div css={container}>
-      <div css={contentWrapper} data-aos="fade-up">
-        <p css={sectionService({ darkmode })}>{projectsStrings.personalWork}</p>
+      <div css={contentWrapper}>
         <h1 css={sectionTitle}>{projectsStrings.title}</h1>
         <p css={sectionDescription}>{projectsStrings.description}</p>
 

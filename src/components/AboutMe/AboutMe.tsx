@@ -27,7 +27,6 @@ const circle = css({
   animation: `${animation}`,
   animationTimeline: "view(auto 90%)",
   fontWeight: "800",
-  color: colors.primary,
   height: "max-content",
   width: "max-content",
   fontSize: "4.25rem",
@@ -92,18 +91,23 @@ const contentContainer = css(
     },
   },
 );
-const circleMenu = ({ isActive }: { isActive: boolean }) =>
+const circleMenu = ({
+  isActive,
+  darkmode,
+}: {
+  darkmode: boolean;
+  isActive: boolean;
+}) =>
   css({
     height: "1rem",
     width: "1rem",
     border: isActive
-      ? `solid ${colors.primary} 0.5rem`
-      : `solid ${colors.primary} 0.2rem`,
+      ? `solid ${darkmode ? colors.background : colors.primary} 0.5rem`
+      : `solid ${darkmode ? colors.background : colors.primary} 0.2rem`,
   });
 
 const infoContainer = css(
   {
-    color: colors.primary,
     display: "flex",
     flexDirection: "column",
     gap: "2rem",
@@ -116,13 +120,11 @@ const infoContainer = css(
   },
 );
 
-const icon = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${darkmode ? colors.background : colors.primary};
+const icon = css`
   font-size: 1.25rem;
 `;
 
-const downloadLink = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${darkmode ? colors.background : colors.primary};
+const downloadLink = css`
   align-items: center;
   display: flex;
 
@@ -202,7 +204,10 @@ const AboutMe: FC = () => {
                 css={listItem({ isActive: activeSection === section.id })}
               >
                 <div
-                  css={circleMenu({ isActive: activeSection === section.id })}
+                  css={circleMenu({
+                    isActive: activeSection === section.id,
+                    darkmode,
+                  })}
                 />
                 {section.text}
               </a>
@@ -230,8 +235,8 @@ const AboutMe: FC = () => {
             target="_blank"
             rel={"norefferer noopener"}
           >
-            <div css={downloadLink({ darkmode })}>
-              <OpenInNewIcon css={icon({ darkmode })} />
+            <div css={downloadLink}>
+              <OpenInNewIcon css={icon} />
               &nbsp; View My Resume
             </div>
           </a>

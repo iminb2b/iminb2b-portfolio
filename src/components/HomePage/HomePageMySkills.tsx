@@ -9,22 +9,23 @@ import { faGear } from "@fortawesome/free-solid-svg-icons/faGear";
 import Lenis from "lenis";
 import { useScroll, useTransform, motion } from "framer-motion";
 
-const container = css(
-  {
-    height: "100vh",
-    border: `1px solid ${colors.primary}`,
-    borderRadius: "8px",
-    maxWidth: "1200px",
-    maxHeight: "50rem",
-    width: "100%",
-  },
-  {
-    "@media screen and (max-width: 1000px)": {
-      fontSize: "2rem",
-      height: "auto",
+const container = ({ darkmode }: { darkmode: boolean }) =>
+  css(
+    {
+      height: "100vh",
+      border: `1px solid ${darkmode ? colors.background : colors.primary}`,
+      borderRadius: "8px",
+      maxWidth: "1200px",
+      maxHeight: "50rem",
+      width: "100%",
     },
-  },
-);
+    {
+      "@media screen and (max-width: 1000px)": {
+        fontSize: "2rem",
+        height: "auto",
+      },
+    },
+  );
 
 const contentWrapper = css(
   {
@@ -45,7 +46,6 @@ const contentWrapper = css(
 const title = css(
   {
     fontWeight: "800",
-    color: colors.primary,
     fontSize: "4rem",
     width: "100%",
     padding: "0 1rem",
@@ -197,7 +197,7 @@ const HomePageMySkills: FC = () => {
   const rotate = useTransform(scrollYProgress, [0, 1], ["360deg", "-360deg"]);
 
   return (
-    <div css={container}>
+    <div css={container({ darkmode })}>
       <div css={contentWrapper}>
         <div css={title}>
           TOOLS & LANGUAGE{" "}

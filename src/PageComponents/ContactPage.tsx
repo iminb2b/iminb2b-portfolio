@@ -93,17 +93,13 @@ const emailInfo = css`
   padding: 0.5rem;
 `;
 
-const icon = ({ darkmode }: { darkmode: boolean }) => css`
+const icon = css`
   font-size: 2.5rem;
-  color: ${darkmode ? colors.background : colors.primary};
   transform: all 0.5s ease-in;
 
   &:hover {
     transform: scale(1.2);
   }
-`;
-const emailTitle = ({ darkmode }: { darkmode: boolean }) => css`
-  color: ${darkmode ? colors.white : colors.textPrimary};
 `;
 const mediaContainer = ({ darkmode }: { darkmode: boolean }) => css`
   padding: 1rem;
@@ -156,10 +152,10 @@ const ContactPage: NextPage = () => {
             <div css={socialContainer}>
               <div css={emailContainer}>
                 <div css={emailBox({ darkmode })}>
-                  <EmailIcon css={icon({ darkmode })} />
+                  <EmailIcon css={icon} />
                 </div>
                 <div css={emailInfo}>
-                  <p css={emailTitle({ darkmode })}>EMAIL</p>
+                  <p>EMAIL</p>
                   <b>iminb2b@gmail.com</b>
                 </div>
               </div>
@@ -169,10 +165,10 @@ const ContactPage: NextPage = () => {
                   <div css={line({ darkmode })}></div>
 
                   <Link href="https://github.com/iminb2b">
-                    <GitHubIcon css={icon({ darkmode })} />
+                    <GitHubIcon css={icon} />
                   </Link>
                   <Link href="https://www.linkedin.com/in/iminb2b/">
-                    <LinkedInIcon css={icon({ darkmode })} />
+                    <LinkedInIcon css={icon} />
                   </Link>
                 </div>
               </div>

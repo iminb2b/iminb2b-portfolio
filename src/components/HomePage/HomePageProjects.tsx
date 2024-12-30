@@ -17,7 +17,7 @@ const contentWrapper = css`
   flex-direction: column;
   width: 100%;
   gap: 8rem;
-  padding: 2rem 0;
+  padding: 5rem 0;
 
   @media screen and (max-width: 1000px) {
     padding: 1rem 0;
@@ -41,7 +41,6 @@ const projectsContainer = css`
 const title = css(
   {
     fontWeight: "800",
-    color: colors.primary,
     fontSize: "4rem",
     width: "100%",
     position: "absolute",

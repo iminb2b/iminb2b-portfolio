@@ -24,7 +24,6 @@ const container = css(
 
 const circle = css({
   fontWeight: "800",
-  color: colors.primary,
   height: "max-content",
   fontSize: "4rem",
 });
@@ -60,7 +59,6 @@ const exerienceContainer = css(
 const title = css(
   {
     fontWeight: "800",
-    color: colors.primary,
     fontSize: "1.5rem",
     width: "100%",
   },

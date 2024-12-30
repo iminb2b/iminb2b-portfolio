@@ -21,12 +21,9 @@ const container = ({ darkmode }: { darkmode: boolean }) =>
     gap: "1.5rem",
     alignItems: "center",
     padding: "7rem 3rem",
-    boxShadow: darkmode
-      ? "rgba(255, 255, 255, 0.1) 0px 4px 12px"
-      : "rgba(0, 0, 0, 0.1) 0px 4px 12px",
     width: "100%",
     height: "100%",
-    color: darkmode ? colors.white : colors.textPrimary,
+    color: darkmode ? colors.background : colors.textPrimary,
 
     " @media screen and (min-width: 720px)": {
       display: "none",

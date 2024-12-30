@@ -34,11 +34,9 @@ const icon = css({
   height: "1rem",
 });
 
-const jobTitle = ({ darkmode }: { darkmode: boolean }) => css`
+const jobTitle = css`
   font-size: 1.125rem;
   line-height: 1.6;
-
-  color: ${darkmode ? colors.background : colors.primary};
 `;
 
 const list = css({
@@ -103,7 +101,7 @@ const HomePageExperienceListItem: FC<{
         )}
       </div>
       <div css={contentContainer}>
-        <h4 css={jobTitle({ darkmode })}>{name}</h4>
+        <h4 css={jobTitle}>{name}</h4>
         <i>{date}</i>
         {relevantCourse && (
           <p>
