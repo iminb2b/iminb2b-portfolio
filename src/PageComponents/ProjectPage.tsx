@@ -9,63 +9,50 @@ import { useContext } from "react";
 import { AppContext } from "@/context/AppContext";
 import { projectInfos } from "@/value/projectsInfo";
 import Link from "next/link";
-import colors from "@/value/colors";
 import buttonStyles from "@/styles/buttonStyles";
+import colors from "@/value/colors";
 
-const container = css`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  min-height: calc(100vh - 5rem);
-  padding: 2rem 0;
-`;
+const container = css(contentContainer, {
+  display: "flex",
+  gap: "2rem",
+  padding: "5rem 0",
+});
 
-const contentWrapper = css`
-  ${contentContainer}
+const contentWrapper = css({
+  width: "50%",
+  display: "flex",
+  flexDirection: "column",
+  gap: "1rem",
+});
 
-  gap: 2rem;
-
-  width: 100%;
-`;
-
-const infoContainer = css`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-  padding: 3rem 0;
-
-  @media screen and (max-width: 900px) {
-    grid-template-columns: 1fr;
-  }
-`;
+const infoContainer = css({
+  display: "flex",
+  flexDirection: "column",
+  gap: "0.5rem",
+});
 
 const image = css`
   width: 100%;
 `;
 
 const title = css`
-  font-size: clamp(2rem, 5vw, 4rem);
-  margin-top: 3rem;
+  font-size: clamp(2rem, 4vw, 4rem);
 `;
 
-const toolList = css`
-  list-style-type: none;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-`;
-const infoContentContainer = css`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
+const toolList = css({
+  padding: "0 1rem",
+});
+const infoContentContainer = css({
+  display: "flex",
+  flexDirection: "column",
+  gap: "0.5rem",
+});
 
-const detailsContainer = css`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 90%;
-`;
+const detailsContainer = css({
+  display: "flex",
+  flexDirection: "column",
+  gap: "0.5rem",
+});
 
 const mediumText = css`
   font-weight: 600;
@@ -75,15 +62,27 @@ const description = css`
   line-height: 1.5;
 `;
 
-const toolItem = css`
-  padding: 0.5rem;
-`;
+const toolItem = css({
+  listStyleType: "circle",
+  padding: "0.25rem",
+});
 
 const linkContainer = css`
   display: flex;
   gap: 2rem;
   margin-top: 2rem;
 `;
+
+const tag = ({ darkmode }: { darkmode: boolean }) =>
+  css({
+    height: "2.5rem",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    border: `2px solid ${darkmode ? colors.background : colors.primary}`,
+    maxWidth: "10rem",
+    padding: "auto 1rem",
+  });
 
 const ProjectPage: NextPage = () => {
   const router = useRouter();
@@ -102,11 +101,12 @@ const ProjectPage: NextPage = () => {
       <PageMeta title="Min - Projects Page" description={"Nhung Nguyen"} />
       <div css={container}>
         <div css={contentWrapper}>
-          <img src={project.img} css={image} />
           <h1 css={title}>{project.title}</h1>
-
           <div css={infoContainer}>
             <div css={infoContentContainer}>
+              <div css={tag({ darkmode })}>
+                {project.isPersonal ? "Personal Project" : "Work Project"}{" "}
+              </div>
               <div css={detailsContainer}>
                 {project.objectives && <h3 css={mediumText}>Objectives:</h3>}
                 <p css={description}>{project.objectives}</p>
@@ -115,16 +115,7 @@ const ProjectPage: NextPage = () => {
                 <h3 css={mediumText}>Description:</h3>
                 <p css={description}>{project.description}</p>
               </div>
-            </div>
-            <div css={infoContentContainer}>
-              <h3 css={mediumText}>Tools</h3>
-              <ul css={toolList}>
-                {project.tool.map((item, index) => (
-                  <li key={index} css={toolItem}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+
               {project.features.length > 0 && (
                 <h3 css={mediumText}>Features</h3>
               )}
@@ -135,25 +126,67 @@ const ProjectPage: NextPage = () => {
                   </li>
                 ))}
               </ul>
-              <div css={linkContainer}>
-                <Link
-                  href={project.link}
-                  css={buttonStyles({ darkmode })}
-                  target="_blank"
-                >
-                  Website
-                </Link>
-                {project.sourceCode && (
-                  <Link
-                    href={project.sourceCode}
-                    target="_blank"
-                    css={buttonStyles({ darkmode })}
-                  >
-                    Source Code
-                  </Link>
-                )}
-              </div>
+
+              {project.role.length > 0 && (
+                <h3 css={mediumText}>Role and Contribution</h3>
+              )}
+              <ul css={toolList}>
+                {project.role.map((item, index) => (
+                  <li key={index} css={toolItem}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
+          </div>
+        </div>
+        <div css={contentWrapper}>
+          <img src={project.img} css={image} />
+
+          <div css={infoContentContainer}>
+            <h3 css={mediumText}>Frameworks/Library:</h3>
+            <ul css={toolList}>
+              {project.framework.map((item, index) => (
+                <li key={index} css={toolItem}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <h3 css={mediumText}>Styling:</h3>
+            <ul css={toolList}>
+              {project.styling.map((item, index) => (
+                <li key={index} css={toolItem}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <h3 css={mediumText}>Others:</h3>
+            <ul css={toolList}>
+              {project.others.map((item, index) => (
+                <li key={index} css={toolItem}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div css={linkContainer}>
+            <Link
+              href={project.link}
+              css={buttonStyles({ darkmode })}
+              target="_blank"
+            >
+              Website
+            </Link>
+            {project.sourceCode && (
+              <Link
+                href={project.sourceCode}
+                target="_blank"
+                css={buttonStyles({ darkmode })}
+              >
+                Source Code
+              </Link>
+            )}
           </div>
         </div>
       </div>

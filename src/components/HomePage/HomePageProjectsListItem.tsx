@@ -98,7 +98,6 @@ const HomePageProjectsListItem: FC<{ project: ProjectInfo }> = ({
         <Link
           href={routeLinks.project({ lang, slug: project.slug })}
           css={buttonStyles({ darkmode })}
-          target="_blank"
         >
           View More
         </Link>
