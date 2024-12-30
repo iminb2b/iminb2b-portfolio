@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "ts-json-schema-generator": "ts-json-schema-generator --no-type-check --out='src/strings/strings.schema.json' --path='src/types/stringTypes.ts' --tsconfig='tsconfig.json' --type='Strings'"
+    "ts-json-schema-generator": "ts-json-schema-generator --no-type-check --out='src/strings/strings.schema.json' --path='src/types/stringTypes.ts' --tsconfig='tsconfig.json' --type='Strings'",
+    "knip": "knip"
   },
   "browser": {
     "src/strings/strings.schema.json": false
@@ -15,10 +16,8 @@
   "dependencies": {
     "@ariakit/react": "^0.4.1",
     "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
-    "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/icons-material": "^5.15.1",
@@ -26,26 +25,24 @@
     "aos": "^2.3.4",
     "firebase": "^11.1.0",
     "framer-motion": "11.0.10",
-    "googleapis": "^129.0.0",
-    "keen-slider": "^6.8.6",
     "lenis": "^1.1.16",
     "next": "14.0.4",
     "react": "^18.2.0",
-    "react-animated-cursor": "^2.11.2",
     "react-dom": "^18.2.0",
-    "react-fast-marquee": "^1.6.4",
-    "react-scroll": "^1.9.0",
-    "sharp": "^0.33.2",
     "ts-json-schema-generator": "^1.1.2",
     "ts-pattern": "^5.0.8"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
-    "@types/node": "^20",
+    "@types/node": "^20.17.10",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^8.18.2",
+    "@typescript-eslint/parser": "^8.12.2",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
-    "typescript": "^5"
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "knip": "^5.41.1",
+    "typescript": "^5.7.2"
   }
 }

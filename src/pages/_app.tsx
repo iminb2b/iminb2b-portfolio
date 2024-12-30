@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import "aos/dist/aos.css";
 import { AppContextType, AppProvider } from "@/context/AppContext";
 import useFirebaseAnalytics from "@/hooks/useFirebaseAnlalytics";
+import { useEffect, useState } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -15,13 +16,32 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const localeStrings = localeInfo === "vi" ? stringsVi : stringsEn;
 
-  const initialContextValue: AppContextType = {
-    strings: localeStrings,
-    lang: localeInfo === "vi" ? "vi" : "en",
-    darkmode: true,
-  };
+  const [initialContextValue, setIntialContextValue] = useState<AppContextType>(
+    {
+      strings: localeStrings,
+      lang: localeInfo === "vi" ? "vi" : "en",
+      darkmode: true,
+    },
+  );
 
   useFirebaseAnalytics();
+
+  useEffect(() => {
+    const localStorageDarkMode = localStorage.getItem("darkmode");
+
+    if (localStorageDarkMode) {
+      setIntialContextValue((prev) => ({
+        ...prev,
+        darkmode: localStorageDarkMode === "true",
+      }));
+    } else {
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      setIntialContextValue((prev) => ({
+        ...prev,
+        darkmode: mediaQuery.matches,
+      }));
+    }
+  }, []);
 
   if (pageProps.error) {
     return (

@@ -28,14 +28,7 @@ const Layout: FC<{
 }> = memo(({ children }) => {
   const {
     state: { darkmode },
-    dispatch,
   } = useContext(AppContext);
-
-  useEffect(() => {
-    const darkMode = localStorage.getItem("darkmode") === "true";
-
-    dispatch({ type: "enableDarkMode", payload: darkMode ?? true });
-  }, []);
 
   return (
     <div css={pageContainer({ darkmode })}>
