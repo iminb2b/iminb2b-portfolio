@@ -4,8 +4,8 @@ import { css } from "@emotion/react";
 const buttonStyles = ({
   size = "medium",
   darkmode,
-  variant = "contained",
-}: {
+}: // variant = "contained",
+{
   size?: "medium" | "large";
   darkmode: boolean;
   variant?: "contained" | "filled";

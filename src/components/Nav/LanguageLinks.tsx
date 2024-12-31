@@ -1,7 +1,5 @@
-import Link from "next/link";
 import { FC } from "react";
 import { css } from "@emotion/react";
-import colors from "@/value/colors";
 import routeLinks from "@/routeLinks";
 import { match } from "ts-pattern";
 import ViFlagIcon from "@/icons/ViFlagIcon";

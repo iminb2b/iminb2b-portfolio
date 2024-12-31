@@ -1,19 +1,16 @@
 import PageContainer from "@/components/PageContent";
 import { NextPage } from "next";
 import PageMeta from "@/components/PageMeta";
-import { css, keyframes } from "@emotion/react";
+import { css } from "@emotion/react";
 import { contentContainer } from "@/styles/generalStyles";
 import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Link from "next/link";
 import colors from "@/value/colors";
-import messageImg from "@/assets/images/message.png";
 import { useContext } from "react";
 import { AppContext } from "@/context/AppContext";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCanadianMapleLeaf } from "@fortawesome/free-brands-svg-icons/faCanadianMapleLeaf";
 const container = css`
   display: flex;
   justify-content: center;
@@ -145,8 +142,8 @@ const ContactPage: NextPage = () => {
           <div css={infoContainer}>
             <h1 css={title}>Have a project in mind or just want to say hi? </h1>
             <p css={description}>
-              Feel free to contact me. I'm always eager to connect with fellow
-              developers and potential clients!
+              Feel free to contact me. I&apos;m always eager to connect with
+              fellow developers and potential clients!
             </p>
 
             <div css={socialContainer}>

@@ -128,7 +128,7 @@ const experienceContainer = css({
 
 const HomePageHero: FC = () => {
   const {
-    state: { lang, strings, darkmode },
+    state: { darkmode },
   } = useContext(AppContext);
 
   const [isHovered, setIsHovered] = useState(false);

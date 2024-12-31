@@ -22,12 +22,11 @@ const container = ({ darkmode }: { darkmode: boolean }) =>
     },
   );
 
-const title = ({ darkmode }: { darkmode: boolean }) =>
-  css({
-    "@media screen and (max-width: 1000px)": {
-      fontSize: "1rem",
-    },
-  });
+const title = css({
+  "@media screen and (max-width: 1000px)": {
+    fontSize: "1rem",
+  },
+});
 
 const HomePageMySkillsListItem: FC<{ skill: SkillInfo }> = ({
   skill: { name },
@@ -38,7 +37,7 @@ const HomePageMySkillsListItem: FC<{ skill: SkillInfo }> = ({
 
   return (
     <div css={container({ darkmode })}>
-      <h2 css={title({ darkmode })}>{name}</h2>
+      <h2 css={title}>{name}</h2>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { css, Global } from "@emotion/react";
-import { FC, memo, ReactNode, useContext, useEffect } from "react";
+import { FC, memo, ReactNode, useContext } from "react";
 import Header from "./Header";
 import globalStyles from "@/styles/globalStyles";
 import { AppContext } from "@/context/AppContext";

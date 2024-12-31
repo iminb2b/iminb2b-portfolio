@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { css, keyframes } from "@emotion/react";
+import { css } from "@emotion/react";
 
 import HomePageMySkillsListItem from "./HomePageMySkillsListItem";
 import { useTransform } from "framer-motion";

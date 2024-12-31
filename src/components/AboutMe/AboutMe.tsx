@@ -142,7 +142,7 @@ const listItem = ({ isActive }: { isActive: boolean }) =>
 
 const AboutMe: FC = () => {
   const {
-    state: { lang, darkmode },
+    state: { darkmode },
   } = useContext(AppContext);
 
   const sections = [
@@ -198,7 +198,7 @@ const AboutMe: FC = () => {
       <div css={menuContainer}>
         <ul css={menuBox}>
           {sections.map((section) => (
-            <li>
+            <li key={section.id}>
               <a
                 href={`#${section.id}`}
                 css={listItem({ isActive: activeSection === section.id })}
@@ -233,7 +233,7 @@ const AboutMe: FC = () => {
           <a
             href={"/pdf/NhungNguyenResume.pdf"}
             target="_blank"
-            rel={"norefferer noopener"}
+            rel="noreferrer"
           >
             <div css={downloadLink}>
               <OpenInNewIcon css={icon} />

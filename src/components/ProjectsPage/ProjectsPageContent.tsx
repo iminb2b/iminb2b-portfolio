@@ -3,7 +3,6 @@ import { css } from "@emotion/react";
 import {
   contentContainer,
   sectionDescription,
-  sectionService,
   sectionTitle,
 } from "@/styles/generalStyles";
 import HomePageProjectsListItem from "../HomePage/HomePageProjectsListItem";
@@ -51,8 +50,6 @@ const projectsContainer = css`
 const ProjectsPageContent: FC = () => {
   const {
     state: {
-      lang,
-      darkmode,
       strings: { MyProjects: projectsStrings },
     },
   } = useContext(AppContext);

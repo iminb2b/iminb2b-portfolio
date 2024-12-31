@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { FC, useContext } from "react";
+import { FC } from "react";
 import { css } from "@emotion/react";
 import { NavInfo } from "./NavList";
 import colors from "@/value/colors";
-import { AppContext } from "@/context/AppContext";
 
 const link = css`
   transition: all 0.3s ease;
@@ -33,10 +32,6 @@ const NavListItem: FC<{
   item: NavInfo;
   isActive: boolean;
 }> = ({ item, isActive }) => {
-  const {
-    state: { darkmode },
-  } = useContext(AppContext);
-
   return (
     <Link href={item.url} css={isActive ? activeLink : link}>
       {item.name}

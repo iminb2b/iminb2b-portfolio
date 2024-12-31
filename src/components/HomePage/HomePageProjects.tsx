@@ -1,11 +1,8 @@
-import { FC, useContext } from "react";
+import { FC } from "react";
 import { css } from "@emotion/react";
-import { contentContainer } from "@/styles/generalStyles";
 import HomePageProjectsListItem from "./HomePageProjectsListItem";
-import { AppContext } from "@/context/AppContext";
 
 import { projectInfos } from "@/value/projectsInfo";
-import colors from "@/value/colors";
 const container = css`
   margin: auto;
   width: 100%;
@@ -59,10 +56,6 @@ const titleContainer = css({
 });
 
 const HomePageProjects: FC = () => {
-  const {
-    state: { lang, darkmode },
-  } = useContext(AppContext);
-
   return (
     <div css={container}>
       <div css={contentWrapper}>

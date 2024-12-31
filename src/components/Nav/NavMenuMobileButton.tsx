@@ -48,4 +48,6 @@ const NavMenuMobileButton: FC<{
   );
 });
 
+NavMenuMobileButton.displayName = "NavMenuMobileButton";
+
 export default NavMenuMobileButton;

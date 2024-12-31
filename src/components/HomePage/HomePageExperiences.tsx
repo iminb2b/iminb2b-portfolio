@@ -1,10 +1,11 @@
 import { FC, useEffect, useRef } from "react";
-import { css, keyframes } from "@emotion/react";
+import { css } from "@emotion/react";
 import colors from "@/value/colors";
-import HomePageExperienceList from "../AboutMe/HomePageExperienceList";
+import HomePageExperiencesList from "./HomePageExperiencesList";
 import { experienceList } from "@/value/aboutMe";
 import Lenis from "lenis";
-import { useScroll, useTransform, motion, useSpring } from "framer-motion";
+import { useScroll } from "framer-motion";
+import HomePageExperienceList from "../AboutMe/HomePageExperienceList";
 
 const container = css(
   {
@@ -21,12 +22,6 @@ const container = css(
     },
   },
 );
-
-const circle = css({
-  fontWeight: "800",
-  height: "max-content",
-  fontSize: "4rem",
-});
 
 const contentContainer = css(
   {
@@ -92,26 +87,14 @@ const HomePageExperience: FC = () => {
   return (
     <div css={container}>
       <div css={contentContainer} ref={ref}>
-        {letters.map((letter, index) => {
-          const delayedScrollYProgress = useSpring(scrollYProgress, {
-            stiffness: 20 + index * 20, // Controls the spring speed
-            damping: 30, // Controls the spring oscillation
-            mass: 1, // Controls the spring weight
-          });
-
-          const translateY = useTransform(
-            delayedScrollYProgress,
-            [0, 1],
-            ["75vh", "0vh"],
-          );
-          const rotate = useTransform(delayedScrollYProgress, [0, 1], [0, 360]);
-
-          return (
-            <motion.div css={circle} style={{ translateY, rotate }}>
-              {letter}
-            </motion.div>
-          );
-        })}
+        {letters.map((letter, index) => (
+          <HomePageExperiencesList
+            key={index}
+            letter={letter}
+            scrollYProgress={scrollYProgress}
+            index={index}
+          />
+        ))}
       </div>
       <div css={exerienceContainer}>
         <div css={title}>EXPERIENCES</div>

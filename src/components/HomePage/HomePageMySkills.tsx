@@ -1,6 +1,5 @@
 import { FC, useContext, useEffect, useRef } from "react";
-import { css, keyframes } from "@emotion/react";
-import { contentContainer } from "@/styles/generalStyles";
+import { css } from "@emotion/react";
 import { AppContext } from "@/context/AppContext";
 import HomePageMySkillsList from "./HomePageMySkillsList";
 import colors from "@/value/colors";
@@ -98,7 +97,7 @@ export type SkillInfo = {
 
 const HomePageMySkills: FC = () => {
   const {
-    state: { lang, darkmode },
+    state: { darkmode },
   } = useContext(AppContext);
 
   const skillsList: SkillInfo[] = [

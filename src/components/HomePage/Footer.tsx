@@ -1,6 +1,5 @@
-import { FC, useContext } from "react";
+import { FC } from "react";
 import { css } from "@emotion/react";
-import { AppContext } from "@/context/AppContext";
 import Logo from "../Logo";
 import colors from "@/value/colors";
 
@@ -22,10 +21,6 @@ const contentContainer = css({
 });
 
 const Footer: FC = () => {
-  const {
-    state: { lang, strings, darkmode },
-  } = useContext(AppContext);
-
   return (
     <div css={container}>
       <div css={contentContainer}>

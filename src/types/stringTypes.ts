@@ -1,16 +1,9 @@
-export type SharedStrings = {
-  // button: {
-  //   viewProjects: string;
-  // };
-};
-
 export type Strings = {
   $schema: string;
 
   /**
    * Shared (reused in several components)
    */
-  shared: SharedStrings;
 
   // Header: {
   //   navLinks: {

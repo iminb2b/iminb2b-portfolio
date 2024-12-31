@@ -1,7 +1,5 @@
-import { FC, useContext } from "react";
+import { FC } from "react";
 import { css, keyframes } from "@emotion/react";
-import { AppContext } from "@/context/AppContext";
-import colors from "@/value/colors";
 import Link from "next/link";
 import routeLinks from "@/routeLinks";
 import buttonStyles from "@/styles/buttonStyles";
@@ -96,24 +94,14 @@ const title = css({
   display: "flex",
 });
 
-const link = css({
-  padding: "1rem",
-  background: colors.primary,
-  borderRadius: "10px",
-});
-
 const HomePageContact: FC = () => {
-  const {
-    state: { lang },
-  } = useContext(AppContext);
-
   return (
     <div css={container}>
       <div css={title}>
         <div css={circle}>L</div>
         <div css={circle2}>E</div>
         <div css={circle3}>T</div>
-        <div css={circle4}>'</div>
+        <div css={circle4}>&apos;</div>
         <div css={circle5}>S</div> &nbsp;
         <div css={circle6}>W</div>
         <div css={circle7}>O</div>

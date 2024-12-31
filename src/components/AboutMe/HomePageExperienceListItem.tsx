@@ -1,7 +1,5 @@
-import { FC, useContext, useEffect, useRef } from "react";
-import { css, keyframes } from "@emotion/react";
-import colors from "@/value/colors";
-import { AppContext } from "@/context/AppContext";
+import { FC, useEffect, useRef } from "react";
+import { css } from "@emotion/react";
 import { ExperienceInfo } from "@/value/aboutMe";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons/faPaperPlane";
@@ -67,10 +65,6 @@ const HomePageExperienceListItem: FC<{
   showDescription = true,
   showAchievement = true,
 }) => {
-  const {
-    state: { darkmode },
-  } = useContext(AppContext);
-
   useEffect(() => {
     const lenis = new Lenis();
 
