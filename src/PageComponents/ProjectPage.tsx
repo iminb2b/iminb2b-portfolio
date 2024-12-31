@@ -12,18 +12,33 @@ import Link from "next/link";
 import buttonStyles from "@/styles/buttonStyles";
 import colors from "@/value/colors";
 
-const container = css(contentContainer, {
-  display: "flex",
-  gap: "2rem",
-  padding: "5rem 0",
-});
+const container = css(
+  contentContainer,
+  {
+    display: "flex",
+    gap: "2rem",
+    padding: "5rem 0",
+  },
+  {
+    "@media screen and (max-width: 1000px)": {
+      flexDirection: "column-reverse",
+    },
+  },
+);
 
-const contentWrapper = css({
-  width: "50%",
-  display: "flex",
-  flexDirection: "column",
-  gap: "1rem",
-});
+const contentWrapper = css(
+  {
+    width: "50%",
+    display: "flex",
+    flexDirection: "column",
+    gap: "1rem",
+  },
+  {
+    "@media screen and (max-width: 1000px)": {
+      width: "100%",
+    },
+  },
+);
 
 const infoContainer = css({
   display: "flex",
